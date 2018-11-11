@@ -1,6 +1,6 @@
-insert into categories (categorie, discipline, ref_activite) values ('salle', 'tennis', 2);
-insert into categories (categorie, discipline, ref_activite) values ('salle', 'squash', 2);
-insert into categories (categorie, discipline, ref_activite) values ('salle', 'badminton', 2);
+insert into categories (structure, discipline, ref_activite) values ('salle', 'tennis', 2);
+insert into categories (structure, discipline, ref_activite) values ('salle', 'squash', 2);
+insert into categories (structure, discipline, ref_activite) values ('salle', 'badminton', 2);
 insert into categories (structure, discipline, ref_activite) values ('salle', 'tennis de table', 2);
 insert into categories (structure, discipline, ref_activite) values ('salle', 'volley-ball', 2);
 insert into categories (structure, discipline, ref_activite) values ('piscine', 'natation', 3);

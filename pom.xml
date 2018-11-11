@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>co.simplon</groupId>
-	<artifactId>project-certification</artifactId>
+	<artifactId>projet-certification</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>project-certification</name>
-	<description>project api / rest / spring </description>
+	<name>projet-certification</name>
+	<description>PROJET API / REST / SPRING </description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

@@ -7,4 +7,6 @@
 #### A l’aide de listes et d’étiquettes des taches à faire, en cours, terminées
 #### que je peux déplacer d’une liste a une autre.
 
+#### J'utilise GitHub pour sa gestion de version décentralisé
+
 #### [Trello] (https://trello.com/b/DrJ6bvKT/certification)

@@ -1,6 +1,6 @@
 ## Certification Api / Rest / Spring
 
-[Objectif] (Certification.pptx) 
+[<b>Objectif</b>] (Certification.pptx) 
 
 
 [<b>Trello</b>] : J'ai utilisé Trello pour organiser et répartir les tâches de mon projet, c'est un outil très simple d'utilisation qui utilise un système de colonne ou l'on peut rapidement faire basculer une tâche d'une colonne à une autre et savoir dans quel catégorie ce situe ma tâche grâce aux étiquettes colorées, par exemple pour mon projet, savoir quelles users stories va avec quel type d'utilisateur. (Client étiquette bleue, Petsitter étiquette violette, Administrateur étiquette rouge)

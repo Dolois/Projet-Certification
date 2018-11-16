@@ -28,16 +28,22 @@ public class Profil
 	private String favori_discipline_1;
 	private String favori_discipline_2;
 	private String favori_discipline_3;
-		
-	// Creer la clef etrangere
-	// Creer la relation entre l'entite Profil et l'entite Utilisateur
-	// Cardinalité entre l'entite Profil et l'entite Utilisateur
-	// Un profil pour un utilisateur
-	@JsonIgnore
-	@OneToOne(mappedBy = "utilisateur")
 	
-	// Creer un tableau Utilisateur nommé utilisateurs
-	private List<Utilisateur> utilisateurs;
+	public Profil() { }
+
+	public Profil(long id, String nom, String prenom, String sexe, String telephone, String photo,
+			String favori_discipline_1, String favori_discipline_2, String favori_discipline_3) 
+	{
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.sexe = sexe;
+		this.telephone = telephone;
+		this.photo = photo;
+		this.favori_discipline_1 = favori_discipline_1;
+		this.favori_discipline_2 = favori_discipline_2;
+		this.favori_discipline_3 = favori_discipline_3;
+	}
 
 	public long getId() {
 		return id;
@@ -109,13 +115,5 @@ public class Profil
 
 	public void setFavori_discipline_3(String favori_discipline_3) {
 		this.favori_discipline_3 = favori_discipline_3;
-	}
-
-	public List<Utilisateur> getUtilisateurs() {
-		return utilisateurs;
-	}
-
-	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
-		this.utilisateurs = utilisateurs;
 	}
 }

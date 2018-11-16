@@ -21,15 +21,16 @@ public class Discipline
 	private long id;
 		
 	private String structure;
-		
-	// Creer la clef etrangere
-	// Creer la relation entre l'entite Discipline et l'entite Activite
-	// Cardinalité entre l'entite Discipline et l'entite Activite
-	// Une discipline pour une activite sportive
-	@OneToOne(mappedBy = "activite")
+
+	// Créer un constructor
+	public Discipline() { }
 	
-	// Creer un tableau d'Activite nomme activites
-	private List<Activite> activites;
+	//Créer un constructor
+	public Discipline(long id, String structure) 
+	{
+		this.id = id;
+		this.structure = structure;
+	}
 
 	public long getId() {
 		return id;
@@ -45,13 +46,5 @@ public class Discipline
 
 	public void setStructure(String structure) {
 		this.structure = structure;
-	}
-
-	public List<Activite> getActivites() {
-		return activites;
-	}
-
-	public void setActivites(List<Activite> activites) {
-		this.activites = activites;
 	}
 }

@@ -27,25 +27,16 @@ public class Reservation
 	private Date date;
 	private Time heure;
 	private int duree;
-		
-	// Creer la clef etrangere
-	// Creer la relation entre l'entite Reservation et l'entite Activite
-	// Cardinalité entre l'entite Reservation et l'entite Activite
-	// Des reservations pour des activites sportives
-	@ManyToMany(mappedBy = "activite")
-		
-	// Creer un tableau d'Activite nommé activites 
-	private List<Activite> activites;
-		
-	// Creer la clef etrangere
-	// Creer la relation entre l'entite Reservation et l'entite Utilisateur 
-	// Cardinalité entre l'entite Reservation et l'entite Utilisateur
-	// Une reservation pour un utilisateur
-	@JsonIgnore
-	@OneToOne(mappedBy = "utilisateur")
-		
-	// Creer un tableau d'Utilisateur nommé utilisateurs 
-	private List<Utilisateur> utilisateurs;
+	
+	public Reservation() { }
+
+	public Reservation(long id, Date date, Time heure, int duree) 
+	{
+		this.id = id;
+		this.date = date;
+		this.heure = heure;
+		this.duree = duree;
+	}
 
 	public long getId() {
 		return id;
@@ -77,21 +68,5 @@ public class Reservation
 
 	public void setDuree(int duree) {
 		this.duree = duree;
-	}
-
-	public List<Activite> getActivites() {
-		return activites;
-	}
-
-	public void setActivites(List<Activite> activites) {
-		this.activites = activites;
-	}
-
-	public List<Utilisateur> getUtilisateurs() {
-		return utilisateurs;
-	}
-
-	public void setUtilisateurs(List<Utilisateur> utilisateurs) {
-		this.utilisateurs = utilisateurs;
 	}
 }

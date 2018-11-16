@@ -25,16 +25,23 @@ public class Activite
 	private String codepostal;
 	private String telephone;
 	private String detail;
-	private String url;
-		
-	// Creer la clef etrangere
-	// Creer la relation entre l'entite Activite et l'entite Discipline
-	// Cardinalité entre l'entite Activite et l'entite Discipline
-	// Une activite sportive pour une discipline
-	@OneToOne(mappedBy = "discipline")
+	private String image;
 	
-	// Creer un tableau de Discipline nomme disciplines
-	private List<Discipline> disciplines;
+	public Activite() { }
+	
+	public Activite(long id, String structure, String nom, String adresse, String ville, String codepostal,
+			String telephone, String detail, String image) 
+	{
+		this.id = id;
+		this.structure = structure;
+		this.nom = nom;
+		this.adresse = adresse;
+		this.ville = ville;
+		this.codepostal = codepostal;
+		this.telephone = telephone;
+		this.detail = detail;
+		this.image = image;
+	}
 
 	public long getId() {
 		return id;
@@ -100,19 +107,11 @@ public class Activite
 		this.detail = detail;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getImage() {
+		return image;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	public List<Discipline> getDisciplines() {
-		return disciplines;
-	}
-
-	public void setDisciplines(List<Discipline> disciplines) {
-		this.disciplines = disciplines;
+	public void setImage(String image) {
+		this.image = image;
 	}
 }

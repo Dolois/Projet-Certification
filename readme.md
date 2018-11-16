@@ -1,6 +1,6 @@
 ## J2EE / Api / Rest / Spring / Hibernate
 
-[Certification] Mon API permet à un utilisateur lambda de lister des activités sportives par différents critères. Elle permettra à l’utilisateur lambda de réserver son activité choisie. Quant à l’organisateur externe, il pourra annuler une réservation de l’activité qu’il gère pour des raisons d’absence, d’incidents ou de maintenance. L’API permettre à  l’administrateur interne de lister toutes les réservations des activités sportives par différents critères pour générer des statistiques.
+[<b>Certification</b>] Mon API permet à un utilisateur lambda de lister des activités sportives par différents critères. Elle permettra à l’utilisateur lambda de réserver son activité choisie. Quant à l’organisateur externe, il pourra annuler une réservation de l’activité qu’il gère pour des raisons d’absence, d’incidents ou de maintenance. L’API permettre à  l’administrateur interne de lister toutes les réservations des activités sportives par différents critères pour générer des statistiques.
 
 [<b>Objectif</b>] (Certification.pptx) 
 

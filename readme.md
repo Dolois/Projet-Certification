@@ -3,7 +3,7 @@
 [<b>Objectif</b>] (Certification.pptx) 
 
 
-[<b>Trello</b>] : J'ai utilisé Trello pour organiser et répartir les tâches de mon projet, c'est un outil très simple d'utilisation qui utilise un système de colonne ou l'on peut rapidement faire basculer une tâche d'une colonne à une autre et savoir dans quel catégorie ce situe ma tâche grâce aux étiquettes colorées, par exemple pour mon projet, savoir quelles users stories va avec quel type d'utilisateur. (Client étiquette bleue, Petsitter étiquette violette, Administrateur étiquette rouge)
+[<b>Trello</b>] : J'ai utilisé Trello pour organiser et répartir les tâches de mon projet, c'est un outil très simple d'utilisation qui utilise un système de colonne ou l'on peut rapidement faire basculer une tâche d'une colonne à une autre et savoir dans quel catégorie ce situe ma tâche grâce aux étiquettes colorées.
 Je peux aussi m'organiser en équipe et simplifier ainsi la répartition des tâches. J'ai choisi d'utiliser un template dit "SCRUM" avec 7 colonnes :
 Ressources : Ici se situe toutes les tâches récurrentes. Comme ça, pas besoin de créer une nouvelle carte à chaque fois qu’une nouvelle landing page doit être créée par exemple.
 Backlog : Ici se situe le répertoire de toutes les tâches en cours.

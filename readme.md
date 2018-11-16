@@ -21,3 +21,12 @@ Github permet aussi de faire différentes branches, c'est très pratique pour hi
 Je commit et push les modifications de mon projet chaque fois qu'il y en a une.
 
 [GitHub] (https://github.com/Dolois/Projet-Certification/)
+
+[Star UML] : Star UML est un logiciel qui m'a aidé à réaliser mes diagrammes use cases et mes diagrammes des classes ainsi que mes diagrammes d'entités / relations.
+Ils sont important pour la réflexion et m'aide à savoir ce que je veux dans chaque tables pour chaque users. Ils m'aident à décrire explicitement le contenu de mon projet.
+Star UML permet de faire ceci très simplement et possède des outils d'automatisation de certaines tâches comme générer des méthodes.
+J'éffectue mes mises à jour de mes diagrammes dès que j'en ai la nécessité.
+C'est le format qui me met le plus à l'aise pour savoir à quoi mon application va ressembler dans sa première version, je place simplement les blocs principaux dans tel ou tel position. Je sais ainsi ce que je veux mettre en avant dans tel ou tel pages de mon application.
+Ça me donne une idée claire et précise du format de mon application.
+
+[Marvel app] : J'ai réalisé ma maquette cliquable sur Marvel car c'est un outil très intuitif pour faire nos propre designs gratuitement.

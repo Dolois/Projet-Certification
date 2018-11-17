@@ -6,13 +6,13 @@
 
 [<b>Trello</b>] : J'ai utilisé Trello pour organiser et répartir les tâches de mon projet, c'est un outil très simple d'utilisation qui utilise un système de colonne ou l'on peut rapidement faire basculer une tâche d'une colonne à une autre et savoir dans quel catégorie ce situe ma tâche grâce aux étiquettes colorées.
 Je peux aussi m'organiser en équipe et simplifier ainsi la répartition des tâches. J'ai choisi d'utiliser un template dit "SCRUM" avec 7 colonnes :
-  * Ressources : Ici se situe toutes les tâches récurrentes. Comme ça, pas besoin de créer une nouvelle carte à chaque fois qu’une nouvelle landing page doit être créée par exemple.
-  * Backlog : Ici se situe le répertoire de toutes les tâches en cours.
-  * ToDo : Cette colonne me sert à planifier et hiérarchiser mon sprint. Je déplace les tâches de ma colonne Backlog ici.
-  * Doing : Dès que je commence à travailler sur une tâche je la déplace dans cette colonne.
-  * Contrôle de qualité : Dès qu'une tâche est terminée, je la déplace dans cette colonne. Une fois que toutes les tâches de mon sprint sont terminées, je vérifie si tout est ok.
-  * Done : Une fois le contrôle de qualité effectué, je place la tâche dans cette colonne.
-  * Locked : Si une tâche est dite "bloqué", c'est que cette tâche dépend d'un facteur externe ou est en attente d'une approbation.
+  * <b>Ressources</b> : Ici se situe toutes les tâches récurrentes. Comme ça, pas besoin de créer une nouvelle carte à chaque fois qu’une nouvelle landing page doit être créée par exemple.
+  * <b>Backlog</b> : Ici se situe le répertoire de toutes les tâches en cours.
+  * <b>To Do</b> : Cette colonne me sert à planifier et hiérarchiser mon sprint. Je déplace les tâches de ma colonne Backlog ici.
+  * <b>Doing</b> : Dès que je commence à travailler sur une tâche je la déplace dans cette colonne.
+  * <b>Contrôle de qualité</b> : Dès qu'une tâche est terminée, je la déplace dans cette colonne. Une fois que toutes les tâches de mon sprint sont terminées, je vérifie si tout est ok.
+  * <b>Done</b> : Une fois le contrôle de qualité effectué, je place la tâche dans cette colonne.
+  * <b>Locked</b> : Si une tâche est dite "bloqué", c'est que cette tâche dépend d'un facteur externe ou est en attente d'une approbation.
 
 [Trello] (https://trello.com/b/DrJ6bvKT/certification)
 

@@ -8,7 +8,7 @@
 Je peux aussi m'organiser en équipe et simplifier ainsi la répartition des tâches. J'ai choisi d'utiliser un template dit "SCRUM" avec 7 colonnes :
   * Ressources : Ici se situe toutes les tâches récurrentes. Comme ça, pas besoin de créer une nouvelle carte à chaque fois qu’une nouvelle landing page doit être créée par exemple.
   * Backlog : Ici se situe le répertoire de toutes les tâches en cours.
-  * To Do : Cette colonne me sert à planifier et hiérarchiser mon sprint. Je déplace les tâches de ma colonne Backlog ici.
+  * ToDo : Cette colonne me sert à planifier et hiérarchiser mon sprint. Je déplace les tâches de ma colonne Backlog ici.
   * Doing : Dès que je commence à travailler sur une tâche je la déplace dans cette colonne.
   * Contrôle de qualité : Dès qu'une tâche est terminée, je la déplace dans cette colonne. Une fois que toutes les tâches de mon sprint sont terminées, je vérifie si tout est ok.
   * Done : Une fois le contrôle de qualité effectué, je place la tâche dans cette colonne.

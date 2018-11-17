@@ -1,7 +1,8 @@
 ## Certification : J2EE / Api / Rest / Spring / Hibernate
 
-[<b>Résumé</b>] Mon API permet à un utilisateur lambda de lister des activités sportives par différents critères. Elle permettra à l’utilisateur lambda de réserver son activité choisie. Quant à l’organisateur externe, il pourra annuler une réservation de l’activité qu’il gère pour des raisons d’absence, d’incidents ou de maintenance. L’API permettre à  l’administrateur interne de lister toutes les réservations des activités sportives par différents critères pour générer des statistiques.
+[<b>Résumé</b>] Mon API permet à un utilisateur lambda de lister des activités sportives par différents critères. Elle permettra à l’utilisateur de réserver son activité choisie. Quant à l’organisateur externe, il pourra annuler une réservation de l’activité qu’il gère pour des raisons d’absence, d’incidents ou de maintenance. L’API permettre à  l’administrateur interne de lister toutes les réservations des activités sportives par différents critères pour générer des statistiques.
 
+[<b>Slide</b>] (https://slides.com/dolois/my-project-java-ee-api/edit)
 
 [<b>Trello</b>] : J'ai utilisé Trello pour organiser et répartir les tâches de mon projet, c'est un outil très simple d'utilisation qui utilise un système de colonne ou l'on peut rapidement faire basculer une tâche d'une colonne à une autre et savoir dans quel catégorie ce situe ma tâche grâce aux étiquettes colorées.
 Je peux aussi m'organiser en équipe et simplifier ainsi la répartition des tâches. J'ai choisi d'utiliser un template dit "SCRUM" avec 7 colonnes :

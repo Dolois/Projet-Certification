@@ -16,12 +16,10 @@ Bloqué : Si une tâche est dite "bloqué", c'est que cette tâche dépend d'un 
 
 [Trello] (https://trello.com/b/DrJ6bvKT/certification)
 
-[<b>GitHub</b>] : J'ai partagé mon projet sur github principalement pour le versioning. Je voulais avoir les différentes versions de mon projet et pouvoir commenter chaque changements. Cela m'a permise d'être très efficace dans l'organisation et de pouvoir revenir sur une version précédente du projet en cas de besoin.
-Github est un outil qui permet aussi le travail en équipe, je peux donc pour mon projet chef d'œuvre, demander des avis à mes collègues développeurs facilement et ils peuvent y accéder quand ils le souhaitent.
+[<b>GitHub</b>] : J'ai partagé mon projet sur github principalement pour le versioning. Je voulais avoir les différentes versions de mon projet et pouvoir commenter chaque changements. Cela m'a permit d'être très efficace dans l'organisation et de pouvoir revenir sur une version précédente du projet en cas de besoin.
+Github est un outil qui permet aussi de travailler en équipe, je peux donc pour mon projet certification, demander des avis à mes collègues développeurs facilement et ils peuvent y accéder quand ils le souhaitent.
 Github permet aussi de faire différentes branches, c'est très pratique pour hiérarchiser ces modifications.
 Je commit et push les modifications de mon projet chaque fois qu'il y en a une.
-
-[GitHub] (https://github.com/Dolois/Projet-Certification/)
 
 [<b>star UML</b>] : Star UML est un logiciel qui m'a aidé à réaliser mes diagrammes use cases et mes diagrammes des classes ainsi que mes diagrammes d'entités / relations.
 Ils sont important pour la réflexion et m'aide à savoir ce que je veux dans chaque tables pour chaque users. Ils m'aident à décrire explicitement le contenu de mon projet.

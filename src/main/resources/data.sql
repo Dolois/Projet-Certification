@@ -1,4 +1,4 @@
-insert into categories (discipline, ref_activite) values ('tennis', 2);
+insert into discipline (discipline, ref_activite) values ('tennis', 2);
 insert into categories (discipline, ref_activite) values ('squash', 2);
 insert into categories (discipline, ref_activite) values ('badminton', 2);
 insert into categories (discipline, ref_activite) values ()'tennis de table', 2);

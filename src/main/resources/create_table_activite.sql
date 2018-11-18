@@ -1,7 +1,7 @@
 USE `sportlib`;
 
 CREATE TABLE `activite` (
-	id LONG NOT NULL AUTO_INCREMENT,
+	id INT NOT NULL AUTO_INCREMENT,
     etablissement VARCHAR(80),
     nom VARCHAR(100),
     adresse VARCHAR(80),
@@ -16,6 +16,6 @@ CREATE TABLE `activite` (
     jour_6 VARCHAR(60),
     jour_7 VARCHAR(60),
 	image VARCHAR(255),
-    ref_discipline LONG,
+    ref_discipline INT,
     PRIMARY KEY ( id )
 );

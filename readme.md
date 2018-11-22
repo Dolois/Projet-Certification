@@ -27,7 +27,8 @@ Je commit et push mon projet chaque modification de mon code.
 [<b>star UML</b>] : Star UML est un logiciel facile d'utilisatiobn pour réaliser 
   * mes diagrammes use cases
   * mes diagrammes des classes
-  * mes diagrammes d'entités / relations. <br><br>
+  * mes diagrammes d'entités / relations
+  
 Ils sont important pour la réflexion et m'aide à savoir ce que je veux dans chaque tables pour chaque users. <br>
 Star UML permet de faire ceci très simplement et possède des outils d'automatisation de certaines tâches comme générer des méthodes.
 

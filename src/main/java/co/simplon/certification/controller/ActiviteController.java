@@ -18,15 +18,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin("http://localhost:")
+// Signaler que les uri sont des embranchements
+// Fusion de l'annotation Controller et response body
+@CrossOrigin("http://localhost:4200")
 @RestController
+
+// Toutes les requetes arrivant sur api/activite viendront sur ce controller.
+// Cette classe contient juste le traitement sur les url qu'elle reçoit et
+// passera en argument de methode une partie du contenu de l'url
+// grace à @PathVariable pour parser a nouveau dans un type java
 @RequestMapping("/api/activite")
 public class ActiviteController 
 {
+	// Injection de dépendance 
+	// grace à l'annotation Autowired et 
+	// l'utilisation d'un constructeur
     @Autowired
 
-    // Créer une instance nommée activiteRepo de ActiviteRepository
+	// On passe un objet de type ActiviteRepository 
+    // en attribut de notre classe ActiviteController
     private ActiviteRepository activiteRepo;
+    
+    // On utilise un constructeur pour transformer 
+    // l'attribut en variable de classe
+	public ActiviteController(ActiviteRepository activiteRepo) 
+	{
+		this.activiteRepo = activiteRepo;
+	}
 
     // Lister toutes les activités sportives
     @GetMapping

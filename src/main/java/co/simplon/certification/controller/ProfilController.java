@@ -1,8 +1,6 @@
 package co.simplon.certification.controller;
 
-import co.simplon.certification.model.Activite;
 import co.simplon.certification.model.Profil;
-import co.simplon.certification.repository.ActiviteRepository;
 import co.simplon.certification.repository.ProfilRepository;
 
 import java.util.List;

@@ -1,7 +1,9 @@
 package co.simplon.certification.controller;
 
-import java.util.List;
+import co.simplon.certification.model.Utilisateur;
+import co.simplon.certification.repository.UtilisateurRepository;
 
+import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +16,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import co.simplon.certification.model.Profil;
-import co.simplon.certification.model.Utilisateur;
-import co.simplon.certification.repository.UtilisateurRepository;
 
 @CrossOrigin("http://localhost:")
 @RestController

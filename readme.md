@@ -1,6 +1,6 @@
 ## Certification : J2EE / Api / Rest / Spring / Hibernate
 
-Pour mon organsation de mon temps et la mise en pratique de la méthode agile SCRUM,
+Pour l'organsation de mon temps et la mise en pratique de la méthode agile SCRUM,
 j'utilise [<b>Trello</b>] : (https://trello.com/b/DrJ6bvKT/certification)
 
 Mon tableau est constitué des 7 colonnes de bases suivantes : 

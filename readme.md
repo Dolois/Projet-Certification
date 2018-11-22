@@ -14,7 +14,9 @@ Mon tableau est constitué de 7 colonnes de bases suivantes :
 
 Pour l'organisation de mon code, j'utilise [<b>GitHub</b>] : (https://github.com/Dolois/Projet-Certification/tree/master/src/main/java/co/simplon/certification)
 
-[<b>GitHub</b>] : J'ai partagé mon projet sur github principalement pour le versioning. Je voulais avoir les différentes versions de mon projet et pouvoir commenter chaque changements. Cela m'a permit d'être très efficace dans l'organisation et de pouvoir revenir sur une version précédente du projet en cas de besoin.
+J'ai partagé mon projet sur github principalement pour le versioning. <br>
+Je voulais avoir les différentes versions de mon projet et pouvoir commenter chaque changements. <br>
+Cela m'a permit d'être très efficace dans l'organisation et de pouvoir revenir sur une version précédente du projet en cas de besoin.
 Github est un outil qui permet aussi de travailler en équipe, je peux donc pour mon projet certification, demander des avis à mes collègues développeurs facilement et ils peuvent y accéder quand ils le souhaitent.
 Github permet aussi de faire différentes branches, c'est très pratique pour hiérarchiser ces modifications.
 Je commit et push les modifications de mon projet chaque fois qu'il y en a une.

@@ -1,7 +1,7 @@
 ## Certification : Java / Api / Rest / Spring / Hibernate
 
 Pour l'organsation de mon temps et la mise en pratique de la méthode agile SCRUM,
-j'utilise [<b>Trello</b>] : (https://trello.com/b/DrJ6bvKT/certification)
+j'utilise [<b>Trello</b>](https://trello.com/b/DrJ6bvKT/certification)
 
 Mon tableau est constitué de 7 listes de bases suivantes : 
   * <b>Ressources</b> : Cette liste détient toutes les tâches répétitives. <br>
@@ -14,8 +14,7 @@ Mon tableau est constitué de 7 listes de bases suivantes :
   * <b>Done</b> : Une fois le contrôle de qualité effectué, je place la tâche dans cette liste.
   * <b>Locked</b> : Si une tâche est dite "bloqué", c'est que cette tâche dépend d'un facteur externe ou est en attente d'une approbation.
 
-Pour l'organisation de mon code, j'utilise [<b>GitHub</b>] : <br>
-(https://github.com/Dolois/Projet-Certification/tree/master/src/main/java/co/simplon/certification)
+Pour l'organisation de mon code, j'utilise [<b>GitHub</b>](https://github.com/Dolois/Projet-Certification/tree/master/src/main/java/co/simplon/certification)
 
 Je partage mon code sur github principalement pour le versioning. <br>
 Github est un outil qui permet aussi de travailler en équipe, je peux donc pour mon projet certification, demander des avis à mes collègues développeurs facilement et ils peuvent y accéder quand ils le souhaitent.

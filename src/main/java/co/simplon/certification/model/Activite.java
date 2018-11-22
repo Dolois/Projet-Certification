@@ -17,30 +17,44 @@ public class Activite
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-		
-	private String structure;
+	private String etablissement;
 	private String nom;
 	private String adresse;
 	private String ville;
 	private String codepostal;
 	private String telephone;
-	private String detail;
+	private String jour_1;
+	private String jour_2;
+	private String jour_3;
+	private String jour_4;
+	private String jour_5;
+	private String jour_6;
+	private String jour_7;
 	private String image;
+	private long ref_discipline;
 	
 	public Activite() { }
-	
-	public Activite(long id, String structure, String nom, String adresse, String ville, String codepostal,
-			String telephone, String detail, String image) 
+
+	public Activite(long id, String etablissement, String nom, String adresse, String ville, String codepostal,
+			String telephone, String jour_1, String jour_2, String jour_3, String jour_4, String jour_5, String jour_6,
+			String jour_7, String image, long ref_discipline) 
 	{
 		this.id = id;
-		this.structure = structure;
+		this.etablissement = etablissement;
 		this.nom = nom;
 		this.adresse = adresse;
 		this.ville = ville;
 		this.codepostal = codepostal;
 		this.telephone = telephone;
-		this.detail = detail;
+		this.jour_1 = jour_1;
+		this.jour_2 = jour_2;
+		this.jour_3 = jour_3;
+		this.jour_4 = jour_4;
+		this.jour_5 = jour_5;
+		this.jour_6 = jour_6;
+		this.jour_7 = jour_7;
 		this.image = image;
+		this.ref_discipline = ref_discipline;
 	}
 
 	public long getId() {
@@ -51,12 +65,12 @@ public class Activite
 		this.id = id;
 	}
 
-	public String getStructure() {
-		return structure;
+	public String getEtablissement() {
+		return etablissement;
 	}
 
-	public void setStructure(String structure) {
-		this.structure = structure;
+	public void setEtablissement(String etablissement) {
+		this.etablissement = etablissement;
 	}
 
 	public String getNom() {
@@ -99,12 +113,60 @@ public class Activite
 		this.telephone = telephone;
 	}
 
-	public String getDetail() {
-		return detail;
+	public String getJour_1() {
+		return jour_1;
 	}
 
-	public void setDetail(String detail) {
-		this.detail = detail;
+	public void setJour_1(String jour_1) {
+		this.jour_1 = jour_1;
+	}
+
+	public String getJour_2() {
+		return jour_2;
+	}
+
+	public void setJour_2(String jour_2) {
+		this.jour_2 = jour_2;
+	}
+
+	public String getJour_3() {
+		return jour_3;
+	}
+
+	public void setJour_3(String jour_3) {
+		this.jour_3 = jour_3;
+	}
+
+	public String getJour_4() {
+		return jour_4;
+	}
+
+	public void setJour_4(String jour_4) {
+		this.jour_4 = jour_4;
+	}
+
+	public String getJour_5() {
+		return jour_5;
+	}
+
+	public void setJour_5(String jour_5) {
+		this.jour_5 = jour_5;
+	}
+
+	public String getJour_6() {
+		return jour_6;
+	}
+
+	public void setJour_6(String jour_6) {
+		this.jour_6 = jour_6;
+	}
+
+	public String getJour_7() {
+		return jour_7;
+	}
+
+	public void setJour_7(String jour_7) {
+		this.jour_7 = jour_7;
 	}
 
 	public String getImage() {
@@ -113,5 +175,13 @@ public class Activite
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public long getRef_discipline() {
+		return ref_discipline;
+	}
+
+	public void setRef_discipline(long ref_discipline) {
+		this.ref_discipline = ref_discipline;
 	}
 }

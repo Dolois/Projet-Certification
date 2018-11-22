@@ -23,7 +23,6 @@ public class Reservation
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-		
 	private Date date;
 	private Time heure;
 	private int duree;

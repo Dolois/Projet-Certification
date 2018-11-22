@@ -19,17 +19,18 @@ public class Discipline
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-		
-	private String structure;
+	private String discipline;
+	private String horaire;
+	private long ref_activite;
 
 	// Créer un constructor
 	public Discipline() { }
-	
-	//Créer un constructor
-	public Discipline(long id, String structure) 
-	{
+
+	public Discipline(long id, String discipline, String horaire, long ref_activite) {
 		this.id = id;
-		this.structure = structure;
+		this.discipline = discipline;
+		this.horaire = horaire;
+		this.ref_activite = ref_activite;
 	}
 
 	public long getId() {
@@ -40,11 +41,27 @@ public class Discipline
 		this.id = id;
 	}
 
-	public String getStructure() {
-		return structure;
+	public String getDiscipline() {
+		return discipline;
 	}
 
-	public void setStructure(String structure) {
-		this.structure = structure;
+	public void setDiscipline(String discipline) {
+		this.discipline = discipline;
+	}
+
+	public String getHoraire() {
+		return horaire;
+	}
+
+	public void setHoraire(String horaire) {
+		this.horaire = horaire;
+	}
+
+	public long getRef_activite() {
+		return ref_activite;
+	}
+
+	public void setRef_activite(long ref_activite) {
+		this.ref_activite = ref_activite;
 	}
 }

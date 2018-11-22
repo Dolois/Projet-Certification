@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// @CrossOrigin("http://localhost:")
+@CrossOrigin("http://localhost:")
 @RestController
 @RequestMapping("/api/activite")
 public class ActiviteController 
@@ -69,10 +69,10 @@ public class ActiviteController
             return ResponseEntity.notFound().build();
         }
 
-        // mise a jour de l'attribut structure
-        if (activite.getStructure() != null) 
+        // mise a jour de l'attribut etablissement
+        if (activite.getEtablissement() != null) 
         {
-            activiteToUpdate.setStructure(activite.getStructure());
+            activiteToUpdate.setEtablissement(activite.getEtablissement());
         }
 
         // mise a jour de l'attribut nom
@@ -105,16 +105,58 @@ public class ActiviteController
             activiteToUpdate.setTelephone(activite.getTelephone());
         }
         
-        // mise a jour de l'attribut détail
-        if (activite.getDetail() != null) 
+        // mise a jour de l'attribut jour_1
+        if (activite.getJour_1() != null) 
         {
-            activiteToUpdate.setDetail(activite.getDetail());
+            activiteToUpdate.setJour_1(activite.getJour_1());
+        }
+        
+        // mise a jour de l'attribut jour_2
+        if (activite.getJour_2() != null) 
+        {
+            activiteToUpdate.setJour_2(activite.getJour_2());
+        }
+        
+        // mise a jour de l'attribut jour_3
+        if (activite.getJour_3() != null) 
+        {
+            activiteToUpdate.setJour_3(activite.getJour_3());
+        }
+        
+        // mise a jour de l'attribut jour_4
+        if (activite.getJour_4() != null) 
+        {
+            activiteToUpdate.setJour_4(activite.getJour_4());
+        }
+        
+        // mise a jour de l'attribut jour_5
+        if (activite.getJour_5() != null) 
+        {
+            activiteToUpdate.setJour_5(activite.getJour_5());
+        }
+        
+        // mise a jour de l'attribut jour_6
+        if (activite.getJour_6() != null) 
+        {
+            activiteToUpdate.setJour_6(activite.getJour_6());
+        }
+        
+        // mise a jour de l'attribut jour_7
+        if (activite.getJour_7() != null) 
+        {
+            activiteToUpdate.setJour_7(activite.getJour_7());
         }
 
         // mise a jour de l'attribut image
         if (activite.getImage() != null) 
         {
             activiteToUpdate.setImage(activite.getImage());
+        }
+        
+        // mise a jour de l'attribut ref_discipline
+        if (activite.getRef_discipline() != 0) 
+        {
+            activiteToUpdate.setRef_discipline(activite.getRef_discipline());
         }
         
         Activite updateActivite = activiteRepo.save(activiteToUpdate);
@@ -124,7 +166,7 @@ public class ActiviteController
 
     // Supprimer une activité sportive par l'id
     @DeleteMapping("/{id}")
-    ResponseEntity<Activite> deleteMatch(@PathVariable(value = "id") long id) 
+    ResponseEntity<Activite> deleteActivite(@PathVariable(value = "id") long id) 
     {
         Activite activite = activiteRepo.getOne(id);
 

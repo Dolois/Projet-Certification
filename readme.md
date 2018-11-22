@@ -4,7 +4,8 @@ Pour l'organsation de mon temps et la mise en pratique de la méthode agile SCRU
 j'utilise [<b>Trello</b>] : (https://trello.com/b/DrJ6bvKT/certification)
 
 Mon tableau est constitué de 7 colonnes de bases suivantes : 
-  * <b>Ressources</b> : Ici se situe toutes les tâches récurrentes. Comme ça, pas besoin de créer une nouvelle carte à chaque fois qu’une nouvelle landing page doit être créée par exemple.  
+  * <b>Ressources</b> : Ici se situe toutes les tâches récurrentes. <br>
+  Comme ça, pas besoin de créer une nouvelle carte à chaque fois qu’une nouvelle landing page doit être créée par exemple. <br>  
   * <b>Backlog</b> : Ici se situe le répertoire de toutes les tâches en cours.
   * <b>To Do</b> : Cette colonne me sert à planifier et hiérarchiser mon sprint. Je déplace les tâches de ma colonne Backlog ici.
   * <b>Doing</b> : Dès que je commence à travailler sur une tâche je la déplace dans cette colonne.

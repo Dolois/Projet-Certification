@@ -1,4 +1,11 @@
-## Certification : Java / Api / Rest / Spring / Hibernate
+Pour ma certification API, je dois maitriser les compétences suivantes :
+
+  * Developper une application client-serveur
+  * Maquetter une application (mockup Mobile First)
+  * Concevoir une base de données (diagrammes)
+  * Mettre en place une base de données (MySQL + Jointures + CRUD)
+  * Developper une interface utilisateur (UI/UX) (Materials pour les normes) (W3C)
+  * Développer des composants d'accés aux données (Hibernate, MVC, DAO, drivers, tomcat)
 
 Pour l'organsation de mon temps et la mise en pratique de la méthode agile SCRUM,
 j'utilise [<b>Trello</b>](https://trello.com/b/DrJ6bvKT/certification)
@@ -17,13 +24,11 @@ Mon tableau est constitué de 7 listes de bases suivantes :
 Pour l'organisation de mon code, j'utilise [<b>GitHub</b>](https://github.com/Dolois/Projet-Certification/tree/master/src/main/java/co/simplon/certification)
 
 Je partage mon code sur github principalement pour le versioning. <br>
-Github est un outil qui permet aussi de travailler en équipe, je peux donc pour mon projet certification, demander des avis à mes collègues développeurs facilement et ils peuvent y accéder quand ils le souhaitent.
-Github permet aussi de faire différentes branches, c'est très pratique pour hiérarchiser ces modifications.
-Je commit et push mon projet chaque modification de mon code.
+Github est un outil qui permet aussi de travailler en équipe, je peux partager mon projet certification et demander des avis à mes collègues développeurs. Github permet aussi de faire différentes branches, c'est très pratique pour hiérarchiser ces modifications.
 
 [<b>Slide</b>] (https://slides.com/dolois/my-project-java-ee-api/edit)
 
-[<b>star UML</b>] : Star UML est un logiciel facile d'utilisatiobn pour réaliser 
+[<b>star UML</b>] : Star UML est un logiciel gratuit et facile d'utilisation pour réaliser 
   * mes diagrammes use cases
   * mes diagrammes des classes
   * mes diagrammes d'entités / relations

@@ -1,6 +1,6 @@
-### Pour ma certification API
-### je dois maitriser les compétences suivantes :
+#### certification API
 
+je dois maitriser les compétences suivantes :
   * Developper une application client-serveur
   * Maquetter une application (mockup Mobile First)
   * Concevoir une base de données (diagrammes)

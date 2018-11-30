@@ -1,14 +1,11 @@
 package co.simplon.certification.model;
 
-import java.util.List;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Activite 
@@ -17,6 +14,7 @@ public class Activite
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	
 	private String etablissement;
 	private String nom;
 	private String adresse;
@@ -31,13 +29,16 @@ public class Activite
 	private String jour_6;
 	private String jour_7;
 	private String image;
+	private float longitude;
+	private float latitude;
+	private Date date_activite;
 	private long ref_discipline;
 	
 	public Activite() { }
 
 	public Activite(long id, String etablissement, String nom, String adresse, String ville, String codepostal,
 			String telephone, String jour_1, String jour_2, String jour_3, String jour_4, String jour_5, String jour_6,
-			String jour_7, String image, long ref_discipline) 
+			String jour_7, String image, float longitude, float latitude, Date date_activite, long ref_discipline) 
 	{
 		this.id = id;
 		this.etablissement = etablissement;
@@ -54,6 +55,9 @@ public class Activite
 		this.jour_6 = jour_6;
 		this.jour_7 = jour_7;
 		this.image = image;
+		this.longitude = longitude;
+		this.latitude = latitude;
+		this.date_activite = date_activite;
 		this.ref_discipline = ref_discipline;
 	}
 
@@ -175,6 +179,30 @@ public class Activite
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public float getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(float longitude) {
+		this.longitude = longitude;
+	}
+
+	public float getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(float latitude) {
+		this.latitude = latitude;
+	}
+
+	public Date getDate_activite() {
+		return date_activite;
+	}
+
+	public void setDate_activite(Date date_activite) {
+		this.date_activite = date_activite;
 	}
 
 	public long getRef_discipline() {

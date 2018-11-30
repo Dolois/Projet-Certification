@@ -1,7 +1,6 @@
-USE `sportlib`;
-
-INSERT INTO `activite` (etablissement, nom, adresse, ville, codepostal, telephone, jour_1, jour_2, jour_3, jour_4, jour_5, jour_6, jour_7, image, ref_discipline)
+INSERT INTO activite (id, etablissement, nom, adresse, ville, codepostal, telephone, jour_1, jour_2, jour_3, jour_4, jour_5, jour_6, jour_7, image, longitude, latitude, ref_discipline)
 VALUES (
+1,
 'Stade',
 'Nautique de Pessac',
 '13 Avenue des Aciéries',
@@ -16,11 +15,14 @@ VALUES (
 'Samedi   11h00 à 19h00',
 'Dimanche 10H00 à 19h00',
 'https://www.bing.com/th?id=A%2boclkcL9kFxWEQ480x360&pid=Local',
+-0.643121199999996,
+44.8007613,
 1
 );
 
-INSERT INTO `activite` (etablissement, nom, adresse, ville, codepostal, telephone, jour_1, jour_2, jour_3, jour_4, jour_5, jour_6, jour_7, image, ref_discipline)
+INSERT INTO activite (id, etablissement, nom, adresse, ville, codepostal, telephone, jour_1, jour_2, jour_3, jour_4, jour_5, jour_6, jour_7, image, longitude, latitude, ref_discipline)
 VALUES (
+2,
 'Piscine',
 'Georges Vallerey',
 '140 Avenue Gambetta',
@@ -35,11 +37,14 @@ VALUES (
 'Samedi   11h00 à 19h00',
 'Dimanche 11H00 à 19h00',
 'https://www.guide-piscine.fr/medias/image/piscine_georges_vallerey_a_paris_20e_-2543-300-0.jpg',
+2.405321200000003,
+48.87389400000001,
 1
 );
 
-INSERT INTO `activite` (etablissement, nom, adresse, ville, codepostal, telephone, jour_1, jour_2, jour_3, jour_4, jour_5, jour_6, jour_7, image, ref_discipline)
+INSERT INTO activite (id, etablissement, nom, adresse, ville, codepostal, telephone, jour_1, jour_2, jour_3, jour_4, jour_5, jour_6, jour_7, image, longitude, latitude, ref_discipline)
 VALUES (
+3,
 'Stade',
 'InfraStructure sports et loisirs',
 '30 rue Louis Lumière',
@@ -54,11 +59,14 @@ VALUES (
 'Samedi   Fermeture',
 'Dimanche Fermeture',
 'http://www.ethic-etapes.com/images/upload/portfolio_img/rip_301275987391.jpg',
+2.4119488999999703,
+48.8588818,
 2
 );
 
-INSERT INTO `activite` (etablissement, nom, adresse, ville, codepostal, telephone, jour_1, jour_2, jour_3, jour_4, jour_5, jour_6, jour_7, image, ref_discipline)
+INSERT INTO activite (id, etablissement, nom, adresse, ville, codepostal, telephone, jour_1, jour_2, jour_3, jour_4, jour_5, jour_6, jour_7, image, longitude, latitude, ref_discipline)
 VALUES (
+4,
 'Salle',
 'Club de Gymnastique',
 '39 rue des Amandiers',
@@ -73,5 +81,7 @@ VALUES (
 'Samedi   11h00 à 21h00',
 'Dimanche Fermeture',
 'https://s3-eu-west-1.amazonaws.com/g4l-images/551ac363e4b0c9516e4b4dc6/2999b36ff6562a6f0782213232feb6fc',
+2.3893728000000465,
+48.8644971,
 2
 );

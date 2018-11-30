@@ -20,7 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 // Signaler que les uri sont des embranchements
 // Fusion de l'annotation Controller et response body
-@CrossOrigin("http://localhost:4200")
+//@CrossOrigin("http://localhost:4200")
+
 @RestController
 
 // Toutes les requetes arrivant sur api/activite viendront sur ce controller.
@@ -35,27 +36,28 @@ public class ActiviteController
 	// l'utilisation d'un constructeur
     @Autowired
 
-	// On passe un objet de type ActiviteRepository 
-    // en attribut de notre classe ActiviteController
+    // Création d'un constructeur avec ses attributs nommé activiteRepo
     private ActiviteRepository activiteRepo;
     
-    // On utilise un constructeur pour transformer 
-    // l'attribut en variable de classe
+    // Utilisation du constructeur 
+    // pour transformer le(s) attribut(s) en variable(s) de classe
 	public ActiviteController(ActiviteRepository activiteRepo) 
 	{
 		this.activiteRepo = activiteRepo;
 	}
 
-    // Lister toutes les activités sportives
+    // Liste toutes les activités sportives
+	// retourne une liste du résultat de la requête select * from activite
     @GetMapping
-    List<Activite> getAllActivite() 
+    List<Activite> findAll() 
     {
     	return activiteRepo.findAll();
     }
 
+   /* Blocage 
     // Lister une activité sportive par l'id
     @GetMapping("{id}")
-    ResponseEntity<Activite> getActiviteById(@PathVariable(value = "id") long id) 
+    ResponseEntity<Activite> findActiviteById(@PathVariable(value = "id") long id) 
     {
         Activite activite = activiteRepo.getOne(id);
 
@@ -66,7 +68,8 @@ public class ActiviteController
 
         return ResponseEntity.ok().body(activite);
     }
-
+	*/
+    
     // Ajouter une activité sportive
     @PostMapping
     Activite addActivite(@Valid @RequestBody Activite activite) 

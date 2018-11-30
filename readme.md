@@ -14,7 +14,7 @@ j'utilise [<b>Trello</b>](https://trello.com/b/DrJ6bvKT/certification)
 Mon tableau est constitué de 7 listes de bases suivantes : 
   * <b>Ressources</b> : Cette liste détient toutes les tâches répétitives. <br>
   Inutile de créer une nouvelle carte à chaque fois qu’une nouvelle landing page doit être créée. <br>  
-  * <b>Backlog</b> : Dans cette liste dans se trouver toutes les tâches en cours. <br>
+  * <b>Backlog</b> : Dans cette liste se trouver toutes les tâches en cours. <br>
   * <b>To Do</b> : Cette liste me sert à planifier et prioriser mon sprint. <br>
   Je déplace les tâches de ma liste Backlog vers la liste to Do.
   * <b>Doing</b> : Dès que je commence à travailler sur une tâche je la déplace dans cette liste.

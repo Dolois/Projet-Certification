@@ -1,5 +1,6 @@
 package co.simplon.certification.controller;
 
+import co.simplon.certification.model.Activite;
 import co.simplon.certification.model.Reservation;
 import co.simplon.certification.repository.ReservationRepository;
 
@@ -12,13 +13,23 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin("http://localhost:4200")
+//Signaler que les URL sont des embranchements
+//Fusion de l'annotation Controller et response body
+//Toutes les requetes arrivant sur api/activite viendront sur ce controller.
+//
+//Cette classe contient juste le traitement sur les URL qu'elle reçoit et
+//passera en argument de methode une partie du contenu de l'url
+//grace à @PathVariable pour parser a nouveau dans un type java
 
+//Mettre en commentaire @CrossOrigin("http://localhost:4200")
+//pour effectuer des tests de vos méthodes CRUD avec Postman
+//@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/reservation")
 public class ReservationController 
@@ -36,7 +47,7 @@ public class ReservationController
     }
     
     // Lister une réservation par l'id
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     ResponseEntity<Reservation> getReservationById(@PathVariable(value = "id") long id) 
     {
         Reservation reservation = reservationRepo.getOne(id);
@@ -47,6 +58,13 @@ public class ReservationController
         }
 
         return ResponseEntity.ok().body(reservation);
+    }
+    
+    // Ajouter une réservation d'une activite sportive
+    @PostMapping
+    Reservation addReservation(@Valid @RequestBody Reservation reservation) 
+    {
+        return reservationRepo.save(reservation);
     }
     
     // Modifier une reservation par l'id
@@ -68,10 +86,22 @@ public class ReservationController
             reservationToUpdate.setDate(reservation.getDate());
         }
 
-        // mise a jour de l'attribut heure
-        if (reservation.getHeure() != null) 
+        // mise a jour de l'attribut heure de début
+        if (reservation.getHeure_debut() != null) 
         {
-            reservationToUpdate.setHeure(reservation.getHeure());
+            reservationToUpdate.setHeure_debut(reservation.getHeure_debut());
+        }
+        
+        // mise a jour de l'attribut heure de fin
+        if (reservation.getHeure_fin() != null) 
+        {
+            reservationToUpdate.setHeure_fin(reservation.getHeure_fin());
+        }
+        
+        // mise a jour de la durée 
+        if (reservation.getDuree() != 0)
+        {
+        	reservationToUpdate.setDuree(reservation.getDuree());
         }
         
         Reservation updateReservation = reservationRepo.save(reservationToUpdate);

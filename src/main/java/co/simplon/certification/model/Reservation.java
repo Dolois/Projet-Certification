@@ -16,7 +16,8 @@ public class Reservation
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private Date date;
-	private Time heure;
+	private Time heure_debut;
+	private Time heure_fin;
 	private int duree;
 	private Date date_reservation;
 	private long ref_activite;
@@ -25,14 +26,12 @@ public class Reservation
 	
 	public Reservation() { }
 
-
-	
-	public Reservation(long id, Date date, Time heure, int duree, Date date_reservation, long ref_activite,
-			long ref_discipline, long ref_utilisateur) 
-	{
+	public Reservation(long id, Date date, Time heure_debut, Time heure_fin, int duree, Date date_reservation,
+			long ref_activite, long ref_discipline, long ref_utilisateur) {
 		this.id = id;
 		this.date = date;
-		this.heure = heure;
+		this.heure_debut = heure_debut;
+		this.heure_fin = heure_fin;
 		this.duree = duree;
 		this.date_reservation = date_reservation;
 		this.ref_activite = ref_activite;
@@ -56,12 +55,20 @@ public class Reservation
 		this.date = date;
 	}
 
-	public Time getHeure() {
-		return heure;
+	public Time getHeure_debut() {
+		return heure_debut;
 	}
 
-	public void setHeure(Time heure) {
-		this.heure = heure;
+	public void setHeure_debut(Time heure_debut) {
+		this.heure_debut = heure_debut;
+	}
+
+	public Time getHeure_fin() {
+		return heure_fin;
+	}
+
+	public void setHeure_fin(Time heure_fin) {
+		this.heure_fin = heure_fin;
 	}
 
 	public int getDuree() {

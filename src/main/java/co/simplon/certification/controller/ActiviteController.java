@@ -4,6 +4,8 @@ import co.simplon.certification.model.Activite;
 import co.simplon.certification.repository.ActiviteRepository;
 
 import java.util.List;
+
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,46 +20,45 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// Signaler que les uri sont des embranchements
+// Signaler que les URL sont des embranchements
 // Fusion de l'annotation Controller et response body
-//@CrossOrigin("http://localhost:4200")
+//Toutes les requetes arrivant sur api/activite viendront sur ce controller.
+//
+//Cette classe contient juste le traitement sur les URL qu'elle reçoit et
+//passera en argument de methode une partie du contenu de l'url
+//grace à @PathVariable pour parser a nouveau dans un type java
 
+
+// Mettre en commentaire @CrossOrigin("http://localhost:4200")
+// pour effectuer des tests de vos méthodes CRUD avec Postman 
+@CrossOrigin("http://localhost:4200")
 @RestController
-
-// Toutes les requetes arrivant sur api/activite viendront sur ce controller.
-// Cette classe contient juste le traitement sur les url qu'elle reçoit et
-// passera en argument de methode une partie du contenu de l'url
-// grace à @PathVariable pour parser a nouveau dans un type java
 @RequestMapping("/api/activite")
+
 public class ActiviteController 
 {
-	// Injection de dépendance 
+	// Injection de dépendance JPA
 	// grace à l'annotation Autowired et 
 	// l'utilisation d'un constructeur
     @Autowired
-
-    // Création d'un constructeur avec ses attributs nommé activiteRepo
+    
+    // Création d'une instance nommé activiteRepo 
+    // de l'interface ActiviteRepository
     private ActiviteRepository activiteRepo;
     
-    // Utilisation du constructeur 
-    // pour transformer le(s) attribut(s) en variable(s) de classe
-	public ActiviteController(ActiviteRepository activiteRepo) 
-	{
-		this.activiteRepo = activiteRepo;
-	}
-
-    // Liste toutes les activités sportives
 	// retourne une liste du résultat de la requête select * from activite
     @GetMapping
-    List<Activite> findAll() 
+    // Méthode GetAllActivite() 
+    // pour toutes les instances Activite présentes dans notre Repository
+    // @return List<Activite> via activiteRepo.findAll()
+    List<Activite> getAllActivite()
     {
     	return activiteRepo.findAll();
     }
 
-   /* Blocage 
-    // Lister une activité sportive par l'id
-    @GetMapping("{id}")
-    ResponseEntity<Activite> findActiviteById(@PathVariable(value = "id") long id) 
+    // Retourne une activité sportive par l'id
+    @GetMapping("/{id}")
+    ResponseEntity<Activite> getActiviteById(@PathVariable long id) 
     {
         Activite activite = activiteRepo.getOne(id);
 
@@ -68,7 +69,15 @@ public class ActiviteController
 
         return ResponseEntity.ok().body(activite);
     }
-	*/
+    
+    /*
+    // Retourne une liste d'activité sportive d'une ville
+    @GetMapping("/ville")
+    List<Activite> getActiviteByCity() 
+    {
+    	return activiteRepo.findByVilleEquals();
+    }
+    */
     
     // Ajouter une activité sportive
     @PostMapping
@@ -79,7 +88,7 @@ public class ActiviteController
 
     // Modifier une activité sportive par l'id
     @PutMapping("/{id}")
-    ResponseEntity<Activite> updateActivite(@PathVariable(value = "id") long id, 
+    ResponseEntity<Activite> updActiviteById(@PathVariable(value = "id") long id, 
     										@Valid @RequestBody Activite activite) 
     {
         Activite activiteToUpdate = activiteRepo.getOne(id);
@@ -174,12 +183,6 @@ public class ActiviteController
             activiteToUpdate.setImage(activite.getImage());
         }
         
-        // mise a jour de l'attribut ref_discipline
-        if (activite.getRef_discipline() != 0) 
-        {
-            activiteToUpdate.setRef_discipline(activite.getRef_discipline());
-        }
-        
         Activite updateActivite = activiteRepo.save(activiteToUpdate);
 
         return ResponseEntity.ok(updateActivite);
@@ -187,7 +190,7 @@ public class ActiviteController
 
     // Supprimer une activité sportive par l'id
     @DeleteMapping("/{id}")
-    ResponseEntity<Activite> deleteActivite(@PathVariable(value = "id") long id) 
+    ResponseEntity<Activite> delActiviteById(@PathVariable(value = "id") long id) 
     {
         Activite activite = activiteRepo.getOne(id);
 

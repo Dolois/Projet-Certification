@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Activite 
 {
@@ -32,14 +33,12 @@ public class Activite
 	private float longitude;
 	private float latitude;
 	private Date date_activite;
-	private long ref_discipline;
 	
 	public Activite() { }
 
 	public Activite(long id, String etablissement, String nom, String adresse, String ville, String codepostal,
 			String telephone, String jour_1, String jour_2, String jour_3, String jour_4, String jour_5, String jour_6,
-			String jour_7, String image, float longitude, float latitude, Date date_activite, long ref_discipline) 
-	{
+			String jour_7, String image, float longitude, float latitude, Date date_activite) {
 		this.id = id;
 		this.etablissement = etablissement;
 		this.nom = nom;
@@ -58,7 +57,6 @@ public class Activite
 		this.longitude = longitude;
 		this.latitude = latitude;
 		this.date_activite = date_activite;
-		this.ref_discipline = ref_discipline;
 	}
 
 	public long getId() {
@@ -203,13 +201,5 @@ public class Activite
 
 	public void setDate_activite(Date date_activite) {
 		this.date_activite = date_activite;
-	}
-
-	public long getRef_discipline() {
-		return ref_discipline;
-	}
-
-	public void setRef_discipline(long ref_discipline) {
-		this.ref_discipline = ref_discipline;
 	}
 }

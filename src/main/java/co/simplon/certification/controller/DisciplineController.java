@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/discipline")
+
 public class DisciplineController 
 {
     //permet d'injecter DisciplineRepository dans mon contrôleur
@@ -80,10 +81,16 @@ public class DisciplineController
             disciplineToUpdate.setDiscipline(discipline.getDiscipline());
         }
 
-        // mise a jour de l'attribut horaire
-        if (discipline.getHoraire() != null) 
+        // mise a jour de l'attribut horaire de début
+        if (discipline.getHoraire_debut() != null) 
         {
-            disciplineToUpdate.setHoraire(discipline.getHoraire());
+            disciplineToUpdate.setHoraire_debut(discipline.getHoraire_debut());
+        }
+        
+        // mise a jour de l'attribut horaire de fin
+        if (discipline.getHoraire_fin() != null) 
+        {
+            disciplineToUpdate.setHoraire_fin(discipline.getHoraire_fin());
         }
         
         // mise a jour de l'attribut ref_activite

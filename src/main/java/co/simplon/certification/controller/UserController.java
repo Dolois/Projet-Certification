@@ -1,8 +1,8 @@
 package co.simplon.certification.controller;
 
-import co.simplon.certification.model.Activite;
-import co.simplon.certification.model.Utilisateur;
-import co.simplon.certification.repository.UtilisateurRepository;
+import co.simplon.certification.model.Activity;
+import co.simplon.certification.model.User;
+import co.simplon.certification.repository.UserRepository;
 
 import java.util.List;
 import javax.validation.Valid;
@@ -21,86 +21,86 @@ import org.springframework.web.bind.annotation.RestController;
 
 //@CrossOrigin("http://localhost:4200")
 @RestController
-@RequestMapping("/api/utilisateur")
+@RequestMapping("/api/user")
 
-public class UtilisateurController 
+public class UserController 
 {
     @Autowired
 
     // Créer une instance nommée utilisateurRepo de UtilisateurRepository
-    private UtilisateurRepository utilisateurRepo;
+    private UserRepository userRepo;
 
     // Lister tous les utilisateurs
     @GetMapping
-    List<Utilisateur> getAllUtilisateur() 
+    List<User> getAllUser() 
     {
-    	return utilisateurRepo.findAll();
+    	return userRepo.findAll();
     }
     
     // Lister un utilisateur par l'id
     @GetMapping("/{id}")
-    ResponseEntity<Utilisateur> getUtilisateurById(@PathVariable long id) 
+    ResponseEntity<User> getUserById(@PathVariable long id) 
     {
-        Utilisateur utilisateur = utilisateurRepo.getOne(id);
+        User user = userRepo.getOne(id);
 
-        if (utilisateur == null) 
+        if (user == null) 
         {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.ok().body(utilisateur);
+        return ResponseEntity.ok().body(user);
     }
     
     // Ajouter un utilisateur
     @PostMapping
-    Utilisateur addUtilisateur(@Valid @RequestBody Utilisateur utilisateur) 
+    User addUser(@Valid @RequestBody User user) 
     {
-        return utilisateurRepo.save(utilisateur);
+        return userRepo.save(user);
     }
     
     // Modifier un utilisateur par l'id
     @PutMapping("/{id}")
-    ResponseEntity<Utilisateur> updateUtilisateur(@PathVariable(value = "id") long id, 
-    										@Valid @RequestBody Utilisateur utilisateur) 
+    ResponseEntity<User> updateUser(@PathVariable(value = "id") long id, 
+    								@Valid @RequestBody User user) 
     {
-        Utilisateur utilisateurToUpdate = utilisateurRepo.getOne(id);
+        User userToUpdate = userRepo.getOne(id);
 
         // Si l'occurence est null alors id non trouvé 
-        if (utilisateurToUpdate == null) 
+        if (userToUpdate == null) 
         {
             return ResponseEntity.notFound().build();
         }
 
         // mise a jour de l'attribut email
-        if (utilisateur.getEmail() != null) 
+        if (user.getEmail() != null) 
         {
-            utilisateurToUpdate.setEmail(utilisateur.getEmail());
+            userToUpdate.setEmail(user.getEmail());
         }
 
         // mise a jour de l'attribut password
-        if (utilisateur.getPassword() != null) 
+        if (user.getPassword() != null) 
         {
-            utilisateurToUpdate.setPassword(utilisateur.getPassword());
+            userToUpdate.setPassword(user.getPassword());
         }
         
-        Utilisateur updateUtilisateur = utilisateurRepo.save(utilisateurToUpdate);
+        User updateUser = userRepo.save(userToUpdate);
 
-        return ResponseEntity.ok(updateUtilisateur);
+        return ResponseEntity.ok(updateUser);
     }
     
     // Supprimer un utilisateur par l'id
     @DeleteMapping("/{id}")
-    ResponseEntity<Utilisateur> deleteUtilisateur(@PathVariable(value = "id") long id) 
+    ResponseEntity<User> deleteUser(@PathVariable(value = "id") long id) 
     {
-        Utilisateur utilisateur = utilisateurRepo.getOne(id);
+        User user = userRepo.getOne(id);
 
-        if (utilisateur == null) 
+        if (user == null) 
         {
             return ResponseEntity.notFound().build();
         }
         
         // Suppression d'un utilisateur par l'id
-        utilisateurRepo.delete(utilisateur);
+        userRepo.delete(user);
 
         return ResponseEntity.ok().build();
     }

@@ -7,14 +7,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @Entity
-public class Activite 
+public class Activity
 {
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long ActivityId;
 	
 	private String etablissement;
 	private String nom;
@@ -30,16 +29,17 @@ public class Activite
 	private String jour_6;
 	private String jour_7;
 	private String image;
-	private float longitude;
-	private float latitude;
+	private double longitude;
+	private double latitude;
 	private Date date_activite;
 	
-	public Activite() { }
+	public Activity() { }
 
-	public Activite(long id, String etablissement, String nom, String adresse, String ville, String codepostal,
+	public Activity(long activityId, String etablissement, String nom, String adresse, String ville, String codepostal,
 			String telephone, String jour_1, String jour_2, String jour_3, String jour_4, String jour_5, String jour_6,
-			String jour_7, String image, float longitude, float latitude, Date date_activite) {
-		this.id = id;
+			String jour_7, String image, double longitude, double latitude, Date date_activite) 
+	{
+		ActivityId = activityId;
 		this.etablissement = etablissement;
 		this.nom = nom;
 		this.adresse = adresse;
@@ -59,12 +59,12 @@ public class Activite
 		this.date_activite = date_activite;
 	}
 
-	public long getId() {
-		return id;
+	public long getActivityId() {
+		return ActivityId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setActivityId(long activityId) {
+		ActivityId = activityId;
 	}
 
 	public String getEtablissement() {
@@ -179,19 +179,19 @@ public class Activite
 		this.image = image;
 	}
 
-	public float getLongitude() {
+	public double getLongitude() {
 		return longitude;
 	}
 
-	public void setLongitude(float longitude) {
+	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
 
-	public float getLatitude() {
+	public double getLatitude() {
 		return latitude;
 	}
 
-	public void setLatitude(float latitude) {
+	public void setLatitude(double latitude) {
 		this.latitude = latitude;
 	}
 

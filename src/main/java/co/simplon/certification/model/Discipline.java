@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Discipline 
@@ -13,33 +14,35 @@ public class Discipline
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long DisciplineId;
 	private String discipline;
 	private String horaire_debut;
 	private String horaire_fin;
 	private Date date_discipline;
-	private long ref_activite;
+	
+    @ManyToOne
+    private Activity ActivityId;
 
 	// Créer un constructor
 	public Discipline() { }
 
-	public Discipline(long id, String discipline, String horaire_debut, String horaire_fin, Date date_discipline,
-			long ref_activite) 
+	public Discipline(long disciplineId, String discipline, String horaire_debut, String horaire_fin,
+			Date date_discipline, Activity activityId) 
 	{
-		this.id = id;
+		DisciplineId = disciplineId;
 		this.discipline = discipline;
 		this.horaire_debut = horaire_debut;
 		this.horaire_fin = horaire_fin;
 		this.date_discipline = date_discipline;
-		this.ref_activite = ref_activite;
+		ActivityId = activityId;
 	}
 
-	public long getId() {
-		return id;
+	public long getDisciplineId() {
+		return DisciplineId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setDisciplineId(long disciplineId) {
+		DisciplineId = disciplineId;
 	}
 
 	public String getDiscipline() {
@@ -74,11 +77,11 @@ public class Discipline
 		this.date_discipline = date_discipline;
 	}
 
-	public long getRef_activite() {
-		return ref_activite;
+	public Activity getActivityId() {
+		return ActivityId;
 	}
 
-	public void setRef_activite(long ref_activite) {
-		this.ref_activite = ref_activite;
+	public void setActivityId(Activity activityId) {
+		ActivityId = activityId;
 	}
 }

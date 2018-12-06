@@ -42,7 +42,7 @@ public class DisciplineController
     }
     
     // Lister une discipline par l'id
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     ResponseEntity<Discipline> getDisciplineById(@PathVariable(value = "id") long id) 
     {
         Discipline discipline = disciplineRepo.getOne(id);
@@ -91,12 +91,6 @@ public class DisciplineController
         if (discipline.getHoraire_fin() != null) 
         {
             disciplineToUpdate.setHoraire_fin(discipline.getHoraire_fin());
-        }
-        
-        // mise a jour de l'attribut ref_activite
-        if (discipline.getRef_activite() != 0) 
-        {
-            disciplineToUpdate.setRef_activite(discipline.getRef_activite());
         }
         
         Discipline updateDiscipline = disciplineRepo.save(disciplineToUpdate);

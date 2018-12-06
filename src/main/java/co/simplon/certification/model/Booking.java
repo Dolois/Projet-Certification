@@ -7,44 +7,53 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Reservation 
+public class Booking 
 {
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long BookingId;
 	private Date date;
 	private Time heure_debut;
 	private Time heure_fin;
 	private int duree;
 	private Date date_reservation;
-	private long ref_activite;
-	private long ref_discipline;
-	private long ref_utilisateur;
-	
-	public Reservation() { }
 
-	public Reservation(long id, Date date, Time heure_debut, Time heure_fin, int duree, Date date_reservation,
-			long ref_activite, long ref_discipline, long ref_utilisateur) {
-		this.id = id;
+    @ManyToOne
+    private Activity ActivityId;    
+
+    @ManyToOne
+    private User UserId;
+    
+    @OneToOne
+    private Discipline DisciplineId;
+	
+	public Booking() { }
+
+	public Booking(long bookingId, Date date, Time heure_debut, Time heure_fin, int duree, Date date_reservation,
+			Activity activityId, User userId, Discipline disciplineId) 
+	{
+		BookingId = bookingId;
 		this.date = date;
 		this.heure_debut = heure_debut;
 		this.heure_fin = heure_fin;
 		this.duree = duree;
 		this.date_reservation = date_reservation;
-		this.ref_activite = ref_activite;
-		this.ref_discipline = ref_discipline;
-		this.ref_utilisateur = ref_utilisateur;
+		ActivityId = activityId;
+		UserId = userId;
+		DisciplineId = disciplineId;
 	}
 
-	public long getId() {
-		return id;
+	public long getBookingId() {
+		return BookingId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setBookingId(long bookingId) {
+		BookingId = bookingId;
 	}
 
 	public Date getDate() {
@@ -87,27 +96,27 @@ public class Reservation
 		this.date_reservation = date_reservation;
 	}
 
-	public long getRef_activite() {
-		return ref_activite;
+	public Activity getActivityId() {
+		return ActivityId;
 	}
 
-	public void setRef_activite(long ref_activite) {
-		this.ref_activite = ref_activite;
+	public void setActivityId(Activity activityId) {
+		ActivityId = activityId;
 	}
 
-	public long getRef_discipline() {
-		return ref_discipline;
+	public User getUserId() {
+		return UserId;
 	}
 
-	public void setRef_discipline(long ref_discipline) {
-		this.ref_discipline = ref_discipline;
+	public void setUserId(User userId) {
+		UserId = userId;
 	}
 
-	public long getRef_utilisateur() {
-		return ref_utilisateur;
+	public Discipline getDisciplineId() {
+		return DisciplineId;
 	}
 
-	public void setRef_utilisateur(long ref_utilisateur) {
-		this.ref_utilisateur = ref_utilisateur;
+	public void setDisciplineId(Discipline disciplineId) {
+		DisciplineId = disciplineId;
 	}
 }

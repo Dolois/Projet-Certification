@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Profil 
@@ -13,7 +14,7 @@ public class Profil
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long ProfilId;
     private String sexe;
     private String role;
 	private String nom;
@@ -24,15 +25,18 @@ public class Profil
 	private String discipline_2;
 	private String discipline_3;
 	private Date date_profil;
-	private long ref_utilisateur;
+
+    @OneToOne
+    private User UserId;
 	
 	public Profil() { }
 
 
-	public Profil(long id, String sexe, String role, String nom, String prenom, String telephone, String photo,
-			String discipline_1, String discipline_2, String discipline_3, Date date_profil, long ref_utilisateur) 
+
+	public Profil(long profilId, String sexe, String role, String nom, String prenom, String telephone, String photo,
+			String discipline_1, String discipline_2, String discipline_3, Date date_profil, User userId) 
 	{
-		this.id = id;
+		ProfilId = profilId;
 		this.sexe = sexe;
 		this.role = role;
 		this.nom = nom;
@@ -43,15 +47,15 @@ public class Profil
 		this.discipline_2 = discipline_2;
 		this.discipline_3 = discipline_3;
 		this.date_profil = date_profil;
-		this.ref_utilisateur = ref_utilisateur;
+		UserId = userId;
 	}
 
-	public long getId() {
-		return id;
+	public long getProfilId() {
+		return ProfilId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setProfilId(long profilId) {
+		ProfilId = profilId;
 	}
 
 	public String getSexe() {
@@ -134,11 +138,11 @@ public class Profil
 		this.date_profil = date_profil;
 	}
 
-	public long getRef_utilisateur() {
-		return ref_utilisateur;
+	public User getUserId() {
+		return UserId;
 	}
 
-	public void setRef_utilisateur(long ref_utilisateur) {
-		this.ref_utilisateur = ref_utilisateur;
+	public void setUserId(User userId) {
+		UserId = userId;
 	}
 }

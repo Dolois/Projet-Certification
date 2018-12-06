@@ -4,32 +4,39 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Utilisateur 
+public class User 
 {
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private long UserId;
 	private String email;
 	private String password;
 	
-	public Utilisateur() { }
+	@OneToOne
+	private Discipline DisciplineId;
+	
+	public User() { }
 
-	public Utilisateur(long id, String email, String password) 
+
+
+	public User(long userId, String email, String password, Discipline disciplineId) 
 	{
-		this.id = id;
+		UserId = userId;
 		this.email = email;
 		this.password = password;
+		DisciplineId = disciplineId;
 	}
 
-	public long getId() {
-		return id;
+	public long getUserId() {
+		return UserId;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setUserId(long userId) {
+		UserId = userId;
 	}
 
 	public String getEmail() {
@@ -46,5 +53,13 @@ public class Utilisateur
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Discipline getDisciplineId() {
+		return DisciplineId;
+	}
+
+	public void setDisciplineId(Discipline disciplineId) {
+		DisciplineId = disciplineId;
 	}
 }

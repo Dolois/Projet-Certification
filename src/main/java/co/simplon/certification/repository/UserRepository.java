@@ -2,9 +2,9 @@ package co.simplon.certification.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import co.simplon.certification.model.Profil;
+import co.simplon.certification.model.User;
 
-public interface ProfilRepository extends JpaRepository<Profil, Long>
+public interface UserRepository extends JpaRepository<User, Long>
 {
 // <ctrl> + <space> pour lister toutes les méthodes Jpa
 // ou

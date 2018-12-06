@@ -124,12 +124,6 @@ public class ProfilController
             profilToUpdate.setPhoto(profil.getPhoto());
         }
         
-        // mise a jour de l'attribut ref_utilisateur
-        if (profil.getRef_utilisateur() != 0) 
-        {
-            profilToUpdate.setRef_utilisateur(profil.getRef_utilisateur());
-        }
-        
         Profil updateProfil = profilRepo.save(profilToUpdate);
 
         return ResponseEntity.ok(updateProfil);

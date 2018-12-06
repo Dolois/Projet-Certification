@@ -1,7 +1,7 @@
 package co.simplon.certification.controller;
 
-import co.simplon.certification.model.Activite;
-import co.simplon.certification.repository.ActiviteRepository;
+import co.simplon.certification.model.Activity;
+import co.simplon.certification.repository.ActivityRepository;
 
 import java.util.List;
 
@@ -32,42 +32,43 @@ import org.springframework.web.bind.annotation.RestController;
 // Mettre en commentaire @CrossOrigin("http://localhost:4200")
 // pour effectuer des tests de vos méthodes CRUD avec Postman 
 @CrossOrigin("http://localhost:4200")
-@RestController
-@RequestMapping("/api/activite")
 
-public class ActiviteController 
+@RestController
+@RequestMapping("/api/activity")
+
+public class ActivityController 
 {
 	// Injection de dépendance JPA
 	// grace à l'annotation Autowired et 
 	// l'utilisation d'un constructeur
     @Autowired
     
-    // Création d'une instance nommé activiteRepo 
-    // de l'interface ActiviteRepository
-    private ActiviteRepository activiteRepo;
+    // Création d'une instance nommé activityRepo 
+    // de l'interface ActivityRepository
+    private ActivityRepository activityRepo;
     
-	// retourne une liste du résultat de la requête select * from activite
+	// retourne une liste du résultat de la requête select * from activity
     @GetMapping
-    // Méthode GetAllActivite() 
-    // pour toutes les instances Activite présentes dans notre Repository
-    // @return List<Activite> via activiteRepo.findAll()
-    List<Activite> getAllActivite()
+    // Méthode GetAllActivities() 
+    // pour toutes les instances Activity présentes dans notre Repository
+    // @return List<Activity> via activityRepo.findAll()
+    List<Activity> getAllActivities()
     {
-    	return activiteRepo.findAll();
+    	return activityRepo.findAll();
     }
 
     // Retourne une activité sportive par l'id
     @GetMapping("/{id}")
-    ResponseEntity<Activite> getActiviteById(@PathVariable long id) 
+    ResponseEntity<Activity> getActivityById(@PathVariable long id) 
     {
-        Activite activite = activiteRepo.getOne(id);
+        Activity activity = activityRepo.getOne(id);
 
-        if (activite == null) 
+        if (activity == null) 
         {
             return ResponseEntity.notFound().build();
         }
 
-        return ResponseEntity.ok().body(activite);
+        return ResponseEntity.ok().body(activity);
     }
     
     /*
@@ -81,126 +82,126 @@ public class ActiviteController
     
     // Ajouter une activité sportive
     @PostMapping
-    Activite addActivite(@Valid @RequestBody Activite activite) 
+    Activity addActivity(@Valid @RequestBody Activity activity) 
     {
-        return activiteRepo.save(activite);
+        return activityRepo.save(activity);
     }
 
     // Modifier une activité sportive par l'id
     @PutMapping("/{id}")
-    ResponseEntity<Activite> updActiviteById(@PathVariable(value = "id") long id, 
-    										@Valid @RequestBody Activite activite) 
+    ResponseEntity<Activity> updActivityById(@PathVariable(value = "id") long id, 
+    										@Valid @RequestBody Activity activity) 
     {
-        Activite activiteToUpdate = activiteRepo.getOne(id);
+        Activity activityToUpdate = activityRepo.getOne(id);
 
         // Si l'occurence est null alors id non trouvé 
-        if (activiteToUpdate == null) 
+        if (activityToUpdate == null) 
         {
             return ResponseEntity.notFound().build();
         }
 
         // mise a jour de l'attribut etablissement
-        if (activite.getEtablissement() != null) 
+        if (activity.getEtablissement() != null) 
         {
-            activiteToUpdate.setEtablissement(activite.getEtablissement());
+            activityToUpdate.setEtablissement(activity.getEtablissement());
         }
 
         // mise a jour de l'attribut nom
-        if (activite.getNom() != null) 
+        if (activity.getNom() != null) 
         {
-            activiteToUpdate.setNom(activite.getNom());
+            activityToUpdate.setNom(activity.getNom());
         }
 
         // mise a jour de l'attribut adresse
-        if (activite.getAdresse() != null) 
+        if (activity.getAdresse() != null) 
         {
-            activiteToUpdate.setAdresse(activite.getAdresse());
+            activityToUpdate.setAdresse(activity.getAdresse());
         }
         
         // mise a jour de l'attribut ville
-        if (activite.getVille() != null) 
+        if (activity.getVille() != null) 
         {
-            activiteToUpdate.setVille(activite.getVille());
+            activityToUpdate.setVille(activity.getVille());
         }
         
         // mise a jour de l'attribut codepostal
-        if (activite.getCodepostal() != null) 
+        if (activity.getCodepostal() != null) 
         {
-            activiteToUpdate.setCodepostal(activite.getCodepostal());
+            activityToUpdate.setCodepostal(activity.getCodepostal());
         }
 
         // mise a jour de l'attribut telephone
-        if (activite.getTelephone() != null) 
+        if (activity.getTelephone() != null) 
         {
-            activiteToUpdate.setTelephone(activite.getTelephone());
+            activityToUpdate.setTelephone(activity.getTelephone());
         }
         
         // mise a jour de l'attribut jour_1
-        if (activite.getJour_1() != null) 
+        if (activity.getJour_1() != null) 
         {
-            activiteToUpdate.setJour_1(activite.getJour_1());
+            activityToUpdate.setJour_1(activity.getJour_1());
         }
         
         // mise a jour de l'attribut jour_2
-        if (activite.getJour_2() != null) 
+        if (activity.getJour_2() != null) 
         {
-            activiteToUpdate.setJour_2(activite.getJour_2());
+            activityToUpdate.setJour_2(activity.getJour_2());
         }
         
         // mise a jour de l'attribut jour_3
-        if (activite.getJour_3() != null) 
+        if (activity.getJour_3() != null) 
         {
-            activiteToUpdate.setJour_3(activite.getJour_3());
+            activityToUpdate.setJour_3(activity.getJour_3());
         }
         
         // mise a jour de l'attribut jour_4
-        if (activite.getJour_4() != null) 
+        if (activity.getJour_4() != null) 
         {
-            activiteToUpdate.setJour_4(activite.getJour_4());
+            activityToUpdate.setJour_4(activity.getJour_4());
         }
         
         // mise a jour de l'attribut jour_5
-        if (activite.getJour_5() != null) 
+        if (activity.getJour_5() != null) 
         {
-            activiteToUpdate.setJour_5(activite.getJour_5());
+            activityToUpdate.setJour_5(activity.getJour_5());
         }
         
         // mise a jour de l'attribut jour_6
-        if (activite.getJour_6() != null) 
+        if (activity.getJour_6() != null) 
         {
-            activiteToUpdate.setJour_6(activite.getJour_6());
+            activityToUpdate.setJour_6(activity.getJour_6());
         }
         
         // mise a jour de l'attribut jour_7
-        if (activite.getJour_7() != null) 
+        if (activity.getJour_7() != null) 
         {
-            activiteToUpdate.setJour_7(activite.getJour_7());
+            activityToUpdate.setJour_7(activity.getJour_7());
         }
 
         // mise a jour de l'attribut image
-        if (activite.getImage() != null) 
+        if (activity.getImage() != null) 
         {
-            activiteToUpdate.setImage(activite.getImage());
+            activityToUpdate.setImage(activity.getImage());
         }
         
-        Activite updateActivite = activiteRepo.save(activiteToUpdate);
+        Activity updateActivity = activityRepo.save(activityToUpdate);
 
-        return ResponseEntity.ok(updateActivite);
+        return ResponseEntity.ok(updateActivity);
     }
 
     // Supprimer une activité sportive par l'id
     @DeleteMapping("/{id}")
-    ResponseEntity<Activite> delActiviteById(@PathVariable(value = "id") long id) 
+    ResponseEntity<Activity> delActivityById(@PathVariable(value = "id") long id) 
     {
-        Activite activite = activiteRepo.getOne(id);
+        Activity activity = activityRepo.getOne(id);
 
-        if (activite == null) 
+        if (activity == null) 
         {
             return ResponseEntity.notFound().build();
         }
         
         // Suppression de l'activité sportive (id)
-        activiteRepo.delete(activite);
+        activityRepo.delete(activity);
 
         return ResponseEntity.ok().build();
     }

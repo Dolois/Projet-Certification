@@ -1,11 +1,11 @@
-#### certification API
+#### certification API Restful
 
-je dois maitriser les compétences suivantes :
+Les compétences acquises :
   * Developper une application client-serveur
   * Maquetter une application (mockup Mobile First)
   * Concevoir une base de données (diagrammes)
   * Mettre en place une base de données (MySQL + Jointures + CRUD)
-  * Developper une interface utilisateur (UI/UX) (Materials pour les normes) (W3C)
+  * Developper une interface utilisateur (UI/UX) (Materialize pour les normes) (W3C)
   * Développer des composants d'accés aux données (Hibernate, MVC, DAO, drivers, tomcat)
 
 Pour l'organsation de mon temps et la mise en pratique de la méthode agile SCRUM,

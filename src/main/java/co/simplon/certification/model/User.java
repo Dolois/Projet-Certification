@@ -12,31 +12,29 @@ public class User
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long UserId;
+	private long userId;
 	private String email;
 	private String password;
 	
 	@OneToOne
-	private Discipline DisciplineId;
+	private Profil profilId;
 	
 	public User() { }
 
-
-
-	public User(long userId, String email, String password, Discipline disciplineId) 
+	public User(long userId, String email, String password, Profil profilId) 
 	{
-		UserId = userId;
+		this.userId = userId;
 		this.email = email;
 		this.password = password;
-		DisciplineId = disciplineId;
+		this.profilId = profilId;
 	}
 
 	public long getUserId() {
-		return UserId;
+		return userId;
 	}
 
 	public void setUserId(long userId) {
-		UserId = userId;
+		this.userId = userId;
 	}
 
 	public String getEmail() {
@@ -55,11 +53,11 @@ public class User
 		this.password = password;
 	}
 
-	public Discipline getDisciplineId() {
-		return DisciplineId;
+	public Profil getProfilId() {
+		return profilId;
 	}
 
-	public void setDisciplineId(Discipline disciplineId) {
-		DisciplineId = disciplineId;
+	public void setProfilId(Profil profilId) {
+		this.profilId = profilId;
 	}
 }

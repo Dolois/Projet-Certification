@@ -9,6 +9,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,7 +32,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 // Mettre en commentaire @CrossOrigin("http://localhost:4200")
 // pour effectuer des tests de vos méthodes CRUD avec Postman 
-@CrossOrigin("http://localhost:4200")
+// @CrossOrigin("http://localhost:4200")
 
 @RestController
 @RequestMapping("/api/activity")
@@ -71,14 +72,13 @@ public class ActivityController
         return ResponseEntity.ok().body(activity);
     }
     
-    /*
-    // Retourne une liste d'activité sportive d'une ville
-    @GetMapping("/ville")
-    List<Activite> getActiviteByCity() 
+    // Retourne une liste d'activités sportives d'une ville
+    // @GetMapping("/city")
+    @Query(value = "SELECT * FROM Activity a WHERE a.city = city", nativeQuery = true) 
+    List<Activity> getAllActivityByCity() 
     {
-    	return activiteRepo.findByVilleEquals();
+    	return activityRepo.findAllActivityByCity();
     }
-    */
     
     // Ajouter une activité sportive
     @PostMapping
@@ -101,87 +101,99 @@ public class ActivityController
         }
 
         // mise a jour de l'attribut etablissement
-        if (activity.getEtablissement() != null) 
+        if (activity.getPlace() != null) 
         {
-            activityToUpdate.setEtablissement(activity.getEtablissement());
+            activityToUpdate.setPlace(activity.getPlace());
         }
 
         // mise a jour de l'attribut nom
-        if (activity.getNom() != null) 
+        if (activity.getName() != null) 
         {
-            activityToUpdate.setNom(activity.getNom());
+            activityToUpdate.setName(activity.getName());
         }
 
         // mise a jour de l'attribut adresse
-        if (activity.getAdresse() != null) 
+        if (activity.getAddress() != null) 
         {
-            activityToUpdate.setAdresse(activity.getAdresse());
+            activityToUpdate.setAddress(activity.getAddress());
         }
         
         // mise a jour de l'attribut ville
-        if (activity.getVille() != null) 
+        if (activity.getCity() != null) 
         {
-            activityToUpdate.setVille(activity.getVille());
+            activityToUpdate.setCity(activity.getCity());
         }
         
         // mise a jour de l'attribut codepostal
-        if (activity.getCodepostal() != null) 
+        if (activity.getZipCode() != null) 
         {
-            activityToUpdate.setCodepostal(activity.getCodepostal());
+            activityToUpdate.setZipCode(activity.getZipCode());
         }
 
         // mise a jour de l'attribut telephone
-        if (activity.getTelephone() != null) 
+        if (activity.getPhone() != null) 
         {
-            activityToUpdate.setTelephone(activity.getTelephone());
+            activityToUpdate.setPhone(activity.getPhone());
         }
         
         // mise a jour de l'attribut jour_1
-        if (activity.getJour_1() != null) 
+        if (activity.getMonday() != null) 
         {
-            activityToUpdate.setJour_1(activity.getJour_1());
+            activityToUpdate.setMonday(activity.getMonday());
         }
         
         // mise a jour de l'attribut jour_2
-        if (activity.getJour_2() != null) 
+        if (activity.getTuesday() != null) 
         {
-            activityToUpdate.setJour_2(activity.getJour_2());
+            activityToUpdate.setTuesday(activity.getTuesday());
         }
         
         // mise a jour de l'attribut jour_3
-        if (activity.getJour_3() != null) 
+        if (activity.getWednesday() != null) 
         {
-            activityToUpdate.setJour_3(activity.getJour_3());
+            activityToUpdate.setWednesday(activity.getWednesday());
         }
         
         // mise a jour de l'attribut jour_4
-        if (activity.getJour_4() != null) 
+        if (activity.getThursday() != null) 
         {
-            activityToUpdate.setJour_4(activity.getJour_4());
+            activityToUpdate.setThursday(activity.getThursday());
         }
         
         // mise a jour de l'attribut jour_5
-        if (activity.getJour_5() != null) 
+        if (activity.getFriday() != null) 
         {
-            activityToUpdate.setJour_5(activity.getJour_5());
+            activityToUpdate.setFriday(activity.getFriday());
         }
         
         // mise a jour de l'attribut jour_6
-        if (activity.getJour_6() != null) 
+        if (activity.getSaturday() != null) 
         {
-            activityToUpdate.setJour_6(activity.getJour_6());
+            activityToUpdate.setSaturday(activity.getSaturday());
         }
         
         // mise a jour de l'attribut jour_7
-        if (activity.getJour_7() != null) 
+        if (activity.getSunday() != null)
         {
-            activityToUpdate.setJour_7(activity.getJour_7());
+            activityToUpdate.setSunday(activity.getSunday());
         }
 
         // mise a jour de l'attribut image
         if (activity.getImage() != null) 
         {
             activityToUpdate.setImage(activity.getImage());
+        }
+
+        // mise a jour de l'attribut longitude
+        if (activity.getLongitude() != 0) 
+        {
+            activityToUpdate.setLongitude(activity.getLongitude());
+        }
+        
+        // mise a jour de l'attribut latitude
+        if (activity.getLatitude() != 0) 
+        {
+            activityToUpdate.setLatitude(activity.getLatitude());
         }
         
         Activity updateActivity = activityRepo.save(activityToUpdate);

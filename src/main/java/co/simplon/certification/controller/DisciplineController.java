@@ -82,15 +82,15 @@ public class DisciplineController
         }
 
         // mise a jour de l'attribut horaire de début
-        if (discipline.getHoraire_debut() != null) 
+        if (discipline.getStartTime() != null) 
         {
-            disciplineToUpdate.setHoraire_debut(discipline.getHoraire_debut());
+            disciplineToUpdate.setStartTime(discipline.getStartTime());
         }
         
         // mise a jour de l'attribut horaire de fin
-        if (discipline.getHoraire_fin() != null) 
+        if (discipline.getEndTime() != null) 
         {
-            disciplineToUpdate.setHoraire_fin(discipline.getHoraire_fin());
+            disciplineToUpdate.setEndTime(discipline.getEndTime());
         }
         
         Discipline updateDiscipline = disciplineRepo.save(disciplineToUpdate);

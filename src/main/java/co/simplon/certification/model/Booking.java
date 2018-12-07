@@ -16,44 +16,44 @@ public class Booking
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long BookingId;
+	private long bookingId;
 	private Date date;
-	private Time heure_debut;
-	private Time heure_fin;
-	private int duree;
-	private Date date_reservation;
+	private Time startTime;
+	private Time endTime;
+	private int duration;
+	private Date date_booking;
 
     @ManyToOne
-    private Activity ActivityId;    
-
-    @ManyToOne
-    private User UserId;
+    private Activity activity;    
     
     @OneToOne
-    private Discipline DisciplineId;
+    private Discipline discipline;
+    
+    @ManyToOne
+    private User userId;
 	
 	public Booking() { }
 
-	public Booking(long bookingId, Date date, Time heure_debut, Time heure_fin, int duree, Date date_reservation,
-			Activity activityId, User userId, Discipline disciplineId) 
+	public Booking(long bookingId, Date date, Time startTime, Time endTime, int duration, Date date_booking,
+			Activity activity, Discipline discipline, User userId) 
 	{
-		BookingId = bookingId;
+		this.bookingId = bookingId;
 		this.date = date;
-		this.heure_debut = heure_debut;
-		this.heure_fin = heure_fin;
-		this.duree = duree;
-		this.date_reservation = date_reservation;
-		ActivityId = activityId;
-		UserId = userId;
-		DisciplineId = disciplineId;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.duration = duration;
+		this.date_booking = date_booking;
+		this.activity = activity;
+		this.discipline = discipline;
+		this.userId = userId;
 	}
 
 	public long getBookingId() {
-		return BookingId;
+		return bookingId;
 	}
 
 	public void setBookingId(long bookingId) {
-		BookingId = bookingId;
+		this.bookingId = bookingId;
 	}
 
 	public Date getDate() {
@@ -64,59 +64,59 @@ public class Booking
 		this.date = date;
 	}
 
-	public Time getHeure_debut() {
-		return heure_debut;
+	public Time getStartTime() {
+		return startTime;
 	}
 
-	public void setHeure_debut(Time heure_debut) {
-		this.heure_debut = heure_debut;
+	public void setStartTime(Time startTime) {
+		this.startTime = startTime;
 	}
 
-	public Time getHeure_fin() {
-		return heure_fin;
+	public Time getEndTime() {
+		return endTime;
 	}
 
-	public void setHeure_fin(Time heure_fin) {
-		this.heure_fin = heure_fin;
+	public void setEndTime(Time endTime) {
+		this.endTime = endTime;
 	}
 
-	public int getDuree() {
-		return duree;
+	public int getDuration() {
+		return duration;
 	}
 
-	public void setDuree(int duree) {
-		this.duree = duree;
+	public void setDuration(int duration) {
+		this.duration = duration;
 	}
 
-	public Date getDate_reservation() {
-		return date_reservation;
+	public Date getDate_booking() {
+		return date_booking;
 	}
 
-	public void setDate_reservation(Date date_reservation) {
-		this.date_reservation = date_reservation;
+	public void setDate_booking(Date date_booking) {
+		this.date_booking = date_booking;
 	}
 
-	public Activity getActivityId() {
-		return ActivityId;
+	public Activity getActivity() {
+		return activity;
 	}
 
-	public void setActivityId(Activity activityId) {
-		ActivityId = activityId;
+	public void setActivity(Activity activity) {
+		this.activity = activity;
+	}
+
+	public Discipline getDiscipline() {
+		return discipline;
+	}
+
+	public void setDiscipline(Discipline discipline) {
+		this.discipline = discipline;
 	}
 
 	public User getUserId() {
-		return UserId;
+		return userId;
 	}
 
 	public void setUserId(User userId) {
-		UserId = userId;
-	}
-
-	public Discipline getDisciplineId() {
-		return DisciplineId;
-	}
-
-	public void setDisciplineId(Discipline disciplineId) {
-		DisciplineId = disciplineId;
+		this.userId = userId;
 	}
 }

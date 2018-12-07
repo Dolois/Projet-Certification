@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Activity
@@ -13,162 +14,162 @@ public class Activity
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long ActivityId;
+	private long activityId;
 	
-	private String etablissement;
-	private String nom;
-	private String adresse;
-	private String ville;
-	private String codepostal;
-	private String telephone;
-	private String jour_1;
-	private String jour_2;
-	private String jour_3;
-	private String jour_4;
-	private String jour_5;
-	private String jour_6;
-	private String jour_7;
+	private String place;
+	private String name;
+	private String address;
+	private String city;
+	private String zipCode;
+	private String phone;
+	private String monday;
+	private String tuesday;
+	private String wednesday;
+	private String thursday;
+	private String friday;
+	private String saturday;
+	private String sunday;
 	private String image;
 	private double longitude;
 	private double latitude;
-	private Date date_activite;
+	private Date dateActivity;
 	
 	public Activity() { }
 
-	public Activity(long activityId, String etablissement, String nom, String adresse, String ville, String codepostal,
-			String telephone, String jour_1, String jour_2, String jour_3, String jour_4, String jour_5, String jour_6,
-			String jour_7, String image, double longitude, double latitude, Date date_activite) 
+	public Activity(long activityId, String place, String name, String address, String city, String zipCode,
+			String phone, String monday, String tuesday, String wednesday, String thursday, String friday,
+			String saturday, String sunday, String image, double longitude, double latitude, Date dateActivity) 
 	{
-		ActivityId = activityId;
-		this.etablissement = etablissement;
-		this.nom = nom;
-		this.adresse = adresse;
-		this.ville = ville;
-		this.codepostal = codepostal;
-		this.telephone = telephone;
-		this.jour_1 = jour_1;
-		this.jour_2 = jour_2;
-		this.jour_3 = jour_3;
-		this.jour_4 = jour_4;
-		this.jour_5 = jour_5;
-		this.jour_6 = jour_6;
-		this.jour_7 = jour_7;
+		this.activityId = activityId;
+		this.place = place;
+		this.name = name;
+		this.address = address;
+		this.city = city;
+		this.zipCode = zipCode;
+		this.phone = phone;
+		this.monday = monday;
+		this.tuesday = tuesday;
+		this.wednesday = wednesday;
+		this.thursday = thursday;
+		this.friday = friday;
+		this.saturday = saturday;
+		this.sunday = sunday;
 		this.image = image;
 		this.longitude = longitude;
 		this.latitude = latitude;
-		this.date_activite = date_activite;
+		this.dateActivity = dateActivity;
 	}
 
 	public long getActivityId() {
-		return ActivityId;
+		return activityId;
 	}
 
 	public void setActivityId(long activityId) {
-		ActivityId = activityId;
+		this.activityId = activityId;
 	}
 
-	public String getEtablissement() {
-		return etablissement;
+	public String getPlace() {
+		return place;
 	}
 
-	public void setEtablissement(String etablissement) {
-		this.etablissement = etablissement;
+	public void setPlace(String place) {
+		this.place = place;
 	}
 
-	public String getNom() {
-		return nom;
+	public String getName() {
+		return name;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getAdresse() {
-		return adresse;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setAdresse(String adresse) {
-		this.adresse = adresse;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public String getVille() {
-		return ville;
+	public String getCity() {
+		return city;
 	}
 
-	public void setVille(String ville) {
-		this.ville = ville;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
-	public String getCodepostal() {
-		return codepostal;
+	public String getZipCode() {
+		return zipCode;
 	}
 
-	public void setCodepostal(String codepostal) {
-		this.codepostal = codepostal;
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 
-	public String getTelephone() {
-		return telephone;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
-	public String getJour_1() {
-		return jour_1;
+	public String getMonday() {
+		return monday;
 	}
 
-	public void setJour_1(String jour_1) {
-		this.jour_1 = jour_1;
+	public void setMonday(String monday) {
+		this.monday = monday;
 	}
 
-	public String getJour_2() {
-		return jour_2;
+	public String getTuesday() {
+		return tuesday;
 	}
 
-	public void setJour_2(String jour_2) {
-		this.jour_2 = jour_2;
+	public void setTuesday(String tuesday) {
+		this.tuesday = tuesday;
 	}
 
-	public String getJour_3() {
-		return jour_3;
+	public String getWednesday() {
+		return wednesday;
 	}
 
-	public void setJour_3(String jour_3) {
-		this.jour_3 = jour_3;
+	public void setWednesday(String wednesday) {
+		this.wednesday = wednesday;
 	}
 
-	public String getJour_4() {
-		return jour_4;
+	public String getThursday() {
+		return thursday;
 	}
 
-	public void setJour_4(String jour_4) {
-		this.jour_4 = jour_4;
+	public void setThursday(String thursday) {
+		this.thursday = thursday;
 	}
 
-	public String getJour_5() {
-		return jour_5;
+	public String getFriday() {
+		return friday;
 	}
 
-	public void setJour_5(String jour_5) {
-		this.jour_5 = jour_5;
+	public void setFriday(String friday) {
+		this.friday = friday;
 	}
 
-	public String getJour_6() {
-		return jour_6;
+	public String getSaturday() {
+		return saturday;
 	}
 
-	public void setJour_6(String jour_6) {
-		this.jour_6 = jour_6;
+	public void setSaturday(String saturday) {
+		this.saturday = saturday;
 	}
 
-	public String getJour_7() {
-		return jour_7;
+	public String getSunday() {
+		return sunday;
 	}
 
-	public void setJour_7(String jour_7) {
-		this.jour_7 = jour_7;
+	public void setSunday(String sunday) {
+		this.sunday = sunday;
 	}
 
 	public String getImage() {
@@ -195,11 +196,11 @@ public class Activity
 		this.latitude = latitude;
 	}
 
-	public Date getDate_activite() {
-		return date_activite;
+	public Date getDateActivity() {
+		return dateActivity;
 	}
 
-	public void setDate_activite(Date date_activite) {
-		this.date_activite = date_activite;
+	public void setDateActivity(Date dateActivity) {
+		this.dateActivity = dateActivity;
 	}
 }

@@ -88,21 +88,21 @@ public class BookingController
         }
 
         // mise a jour de l'attribut heure de début
-        if (booking.getHeure_debut() != null) 
+        if (booking.getStartTime() != null) 
         {
-            bookingToUpdate.setHeure_debut(booking.getHeure_debut());
+            bookingToUpdate.setStartTime(booking.getStartTime());
         }
         
         // mise a jour de l'attribut heure de fin
-        if (booking.getHeure_fin() != null) 
+        if (booking.getEndTime() != null) 
         {
-            bookingToUpdate.setHeure_fin(booking.getHeure_fin());
+            bookingToUpdate.setEndTime(booking.getEndTime());
         }
         
         // mise a jour de la durée 
-        if (booking.getDuree() != 0)
+        if (booking.getDuration() != 0)
         {
-        	bookingToUpdate.setDuree(booking.getDuree());
+        	bookingToUpdate.setDuration(booking.getDuration());
         }
         
         Booking updateBooking = bookingRepo.save(bookingToUpdate);

@@ -71,21 +71,21 @@ public class ProfilController
         }
 
         // mise a jour de l'attribut nom
-        if (profil.getNom() != null) 
+        if (profil.getName() != null) 
         {
-            profilToUpdate.setNom(profil.getNom());
+            profilToUpdate.setName(profil.getName());
         }
 
         // mise a jour de l'attribut prenom
-        if (profil.getPrenom() != null) 
+        if (profil.getFirstname() != null) 
         {
-            profilToUpdate.setPrenom(profil.getPrenom());
+            profilToUpdate.setFirstname(profil.getFirstname());
         }
 
-        // mise a jour de l'attribut sexe
-        if (profil.getSexe() != null) 
+        // mise a jour de l'attribut ville
+        if (profil.getCity() != null) 
         {
-            profilToUpdate.setSexe(profil.getSexe());
+            profilToUpdate.setCity(profil.getCity());
         }
         
         // mise a jour de l'attribut role (utilisateur, organisateur, administrateur)
@@ -95,9 +95,9 @@ public class ProfilController
         }
 
         // mise a jour de l'attribut telephone
-        if (profil.getTelephone() != null) 
+        if (profil.getPhone() != null) 
         {
-            profilToUpdate.setTelephone(profil.getTelephone());
+            profilToUpdate.setPhone(profil.getPhone());
         }
         
         // mise a jour de l'attribut discipline_1

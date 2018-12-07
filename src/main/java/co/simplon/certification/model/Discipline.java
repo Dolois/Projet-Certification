@@ -1,6 +1,7 @@
 package co.simplon.certification.model;
 
 import java.sql.Date;
+import java.sql.Time;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,35 +15,35 @@ public class Discipline
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long DisciplineId;
+	private long disciplineId;
 	private String discipline;
-	private String horaire_debut;
-	private String horaire_fin;
+	private Time startTime;
+	private Time endTime;
 	private Date date_discipline;
 	
     @ManyToOne
-    private Activity ActivityId;
+    private Activity activity;
 
 	// Créer un constructor
 	public Discipline() { }
 
-	public Discipline(long disciplineId, String discipline, String horaire_debut, String horaire_fin,
-			Date date_discipline, Activity activityId) 
+	public Discipline(long disciplineId, String discipline, Time startTime, Time endTime, Date date_discipline,
+			Activity activity) 
 	{
-		DisciplineId = disciplineId;
+		this.disciplineId = disciplineId;
 		this.discipline = discipline;
-		this.horaire_debut = horaire_debut;
-		this.horaire_fin = horaire_fin;
+		this.startTime = startTime;
+		this.endTime = endTime;
 		this.date_discipline = date_discipline;
-		ActivityId = activityId;
+		this.activity = activity;
 	}
 
 	public long getDisciplineId() {
-		return DisciplineId;
+		return disciplineId;
 	}
 
 	public void setDisciplineId(long disciplineId) {
-		DisciplineId = disciplineId;
+		this.disciplineId = disciplineId;
 	}
 
 	public String getDiscipline() {
@@ -53,20 +54,20 @@ public class Discipline
 		this.discipline = discipline;
 	}
 
-	public String getHoraire_debut() {
-		return horaire_debut;
+	public Time getStartTime() {
+		return startTime;
 	}
 
-	public void setHoraire_debut(String horaire_debut) {
-		this.horaire_debut = horaire_debut;
+	public void setStartTime(Time startTime) {
+		this.startTime = startTime;
 	}
 
-	public String getHoraire_fin() {
-		return horaire_fin;
+	public Time getEndTime() {
+		return endTime;
 	}
 
-	public void setHoraire_fin(String horaire_fin) {
-		this.horaire_fin = horaire_fin;
+	public void setEndTime(Time endTime) {
+		this.endTime = endTime;
 	}
 
 	public Date getDate_discipline() {
@@ -77,11 +78,11 @@ public class Discipline
 		this.date_discipline = date_discipline;
 	}
 
-	public Activity getActivityId() {
-		return ActivityId;
+	public Activity getActivity() {
+		return activity;
 	}
 
-	public void setActivityId(Activity activityId) {
-		ActivityId = activityId;
+	public void setActivity(Activity activity) {
+		this.activity = activity;
 	}
 }

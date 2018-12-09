@@ -6,7 +6,7 @@ Les compétences acquises :
   * Concevoir une base de données (diagrammes)
   * Mettre en place une base de données (MySQL + Jointures + CRUD)
   * Developper une interface utilisateur (UI/UX) (Materialize pour les normes) (W3C)
-  * Développer des composants d'accés aux données (Hibernate, MVC, DAO, drivers, tomcat)
+  * Développer des composants d'accés aux données (Hibernate, MVC, tomcat)
 
 Pour l'organsation de mon temps et la mise en pratique de la méthode agile SCRUM,
 j'utilise [<b>Trello</b>](https://trello.com/b/DrJ6bvKT/certification)

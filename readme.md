@@ -37,5 +37,3 @@ Je vous présente mon chef d'oeuvre avec [<b>Slide</b>](https://slides.com/doloi
   
 Ils sont important pour la réflexion et m'aide à savoir ce que je veux dans chaque tables pour chaque users. <br>
 Star UML permet de faire ceci très simplement et possède des outils d'automatisation de certaines tâches comme générer des méthodes.
-
-[<b>Marvel app</b>] : J'ai réalisé ma maquette cliquable sur Marvel car c'est un outil très intuitif pour faire nos propre designs gratuitement.

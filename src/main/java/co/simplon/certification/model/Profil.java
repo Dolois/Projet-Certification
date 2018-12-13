@@ -15,6 +15,7 @@ public class Profil
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long profilId;
+	
 	private String name;
 	private String firstname;
 	private String city;
@@ -24,7 +25,7 @@ public class Profil
 	private String discipline_1;
 	private String discipline_2;
 	private String discipline_3;
-	private Date date_profil;
+	private Date dateProfil;
 
     @OneToOne
     private User userId;
@@ -32,7 +33,7 @@ public class Profil
 	public Profil() { }
 
 	public Profil(long profilId, String name, String firstname, String city, String phone, String role, String photo,
-			String discipline_1, String discipline_2, String discipline_3, Date date_profil, User userId) 
+			String discipline_1, String discipline_2, String discipline_3, Date dateProfil, User userId) 
 	{
 		this.profilId = profilId;
 		this.name = name;
@@ -44,7 +45,7 @@ public class Profil
 		this.discipline_1 = discipline_1;
 		this.discipline_2 = discipline_2;
 		this.discipline_3 = discipline_3;
-		this.date_profil = date_profil;
+		this.dateProfil = dateProfil;
 		this.userId = userId;
 	}
 
@@ -128,12 +129,12 @@ public class Profil
 		this.discipline_3 = discipline_3;
 	}
 
-	public Date getDate_profil() {
-		return date_profil;
+	public Date getDateProfil() {
+		return dateProfil;
 	}
 
-	public void setDate_profil(Date date_profil) {
-		this.date_profil = date_profil;
+	public void setDateProfil(Date dateProfil) {
+		this.dateProfil = dateProfil;
 	}
 
 	public User getUserId() {

@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class User 
 {
@@ -13,13 +15,14 @@ public class User
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long userId;
+	
 	private String email;
 	private String password;
 	
 	@OneToOne
 	private Profil profilId;
 	
-	public User() { }
+	public User() {}
 
 	public User(long userId, String email, String password, Profil profilId) 
 	{

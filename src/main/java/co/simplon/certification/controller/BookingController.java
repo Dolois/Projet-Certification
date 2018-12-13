@@ -1,5 +1,7 @@
 package co.simplon.certification.controller;
 
+import co.simplon.certification.model.Place;
+import co.simplon.certification.model.User;
 import co.simplon.certification.model.Activity;
 import co.simplon.certification.model.Booking;
 import co.simplon.certification.repository.BookingRepository;

@@ -7,6 +7,8 @@ Les compétences acquises :
   * Maquetter une application (mockup Mobile First)
   * Concevoir une base de données (diagrammes)
   * Mettre en place une base de données (MySQL + Jointures + CRUD)
+  * Tests avec Postman de POST des entités Place et Activity
+  * Tests avec Postman de GET des entités Place et Activity
   * Developper une interface utilisateur (UI/UX) (Materialize pour les normes) (W3C)
   * Développer des composants d'accés aux données (Hibernate, MVC, tomcat)
 

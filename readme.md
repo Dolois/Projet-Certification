@@ -1,12 +1,14 @@
 #### certification API Restful
 
+
+
 Les compétences acquises :
   * Developper une application client-serveur
   * Maquetter une application (mockup Mobile First)
   * Concevoir une base de données (diagrammes)
   * Mettre en place une base de données (MySQL + Jointures + CRUD)
   * Developper une interface utilisateur (UI/UX) (Materialize pour les normes) (W3C)
-  * Développer des composants d'accés aux données (Hibernate, MVC, DAO, drivers, tomcat)
+  * Développer des composants d'accés aux données (Hibernate, MVC, tomcat)
 
 Pour l'organsation de mon temps et la mise en pratique de la méthode agile SCRUM,
 j'utilise [<b>Trello</b>](https://trello.com/b/DrJ6bvKT/certification)
@@ -35,5 +37,3 @@ Je vous présente mon chef d'oeuvre avec [<b>Slide</b>](https://slides.com/doloi
   
 Ils sont important pour la réflexion et m'aide à savoir ce que je veux dans chaque tables pour chaque users. <br>
 Star UML permet de faire ceci très simplement et possède des outils d'automatisation de certaines tâches comme générer des méthodes.
-
-[<b>Marvel app</b>] : J'ai réalisé ma maquette cliquable sur Marvel car c'est un outil très intuitif pour faire nos propre designs gratuitement.

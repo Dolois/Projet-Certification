@@ -7,7 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Activity 
@@ -15,35 +19,44 @@ public class Activity
 	// Création de la clé primaire activity_id
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long activityId;
+	private long id;
 	
 	private String activity;
 	private float startTime;
 	private float endTime;
 	private Date dateActivity;
 	
-	@OneToMany (mappedBy = "activity")
-	private List<Place> places;
+	@ManyToOne
+	@JoinColumn(name="place_id")
+	@JsonIgnore
+	private Place place;
 	
 	public Activity() {}
 
-	public Activity(long activityId, String activity, float startTime, float endTime, Date dateActivity,
-			List<Place> places) 
-	{
-		this.activityId = activityId;
+	public Activity(long id, String activity, float startTime, float endTime, Date dateActivity, Place place) {
+		super();
+		this.id = id;
 		this.activity = activity;
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.dateActivity = dateActivity;
-		this.places = places;
+		this.place = place;
 	}
 
-	public long getActivityId() {
-		return activityId;
+	public long getId() {
+		return id;
 	}
 
-	public void setActivityId(long activityId) {
-		this.activityId = activityId;
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Place getPlace() {
+		return place;
+	}
+
+	public void setPlace(Place place) {
+		this.place = place;
 	}
 
 	public String getActivity() {
@@ -76,13 +89,5 @@ public class Activity
 
 	public void setDateActivity(Date dateActivity) {
 		this.dateActivity = dateActivity;
-	}
-
-	public List<Place> getPlaces() {
-		return places;
-	}
-
-	public void setPlaces(List<Place> places) {
-		this.places = places;
 	}
 }

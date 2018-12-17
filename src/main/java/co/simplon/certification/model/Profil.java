@@ -6,7 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Profil 
@@ -14,7 +17,7 @@ public class Profil
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long profilId;
+	private long id;
 	
 	private String name;
 	private String firstname;
@@ -28,14 +31,16 @@ public class Profil
 	private Date dateProfil;
 
     @OneToOne
-    private User userId;
+    @JoinColumn(name="user_id")
+    @JsonIgnore
+    private User user;
 	
 	public Profil() { }
 
-	public Profil(long profilId, String name, String firstname, String city, String phone, String role, String photo,
-			String discipline_1, String discipline_2, String discipline_3, Date dateProfil, User userId) 
+	public Profil(long id, String name, String firstname, String city, String phone, String role, String photo,
+			String discipline_1, String discipline_2, String discipline_3, Date dateProfil, User user) 
 	{
-		this.profilId = profilId;
+		this.id = id;
 		this.name = name;
 		this.firstname = firstname;
 		this.city = city;
@@ -46,15 +51,15 @@ public class Profil
 		this.discipline_2 = discipline_2;
 		this.discipline_3 = discipline_3;
 		this.dateProfil = dateProfil;
-		this.userId = userId;
+		this.user = user;
 	}
 
-	public long getProfilId() {
-		return profilId;
+	public long getId() {
+		return id;
 	}
 
-	public void setProfilId(long profilId) {
-		this.profilId = profilId;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -137,11 +142,11 @@ public class Profil
 		this.dateProfil = dateProfil;
 	}
 
-	public User getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(User userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 }

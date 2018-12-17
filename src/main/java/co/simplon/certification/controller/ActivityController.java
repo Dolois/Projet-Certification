@@ -1,7 +1,9 @@
 package co.simplon.certification.controller;
 
 import co.simplon.certification.model.Activity;
+import co.simplon.certification.model.Place;
 import co.simplon.certification.repository.ActivityRepository;
+import co.simplon.certification.repository.PlaceRepository;
 
 import java.util.List;
 import javax.validation.Valid;
@@ -27,15 +29,18 @@ public class ActivityController
 {
     //permet d'injecter DisciplineRepository dans mon contrôleur
     @Autowired
-
     // Créer une instance nommée disciplineRepo de DisciplineRepository
     private ActivityRepository activityRepo;
     
+    @Autowired
+    // Créer une instance nommée disciplineRepo de DisciplineRepository
+    private PlaceRepository placeRepo;
+    
     // Lister toutes les disciplines
     @GetMapping
-    // Méthode GetAllDiscipline() 
-    // pour toutes les instances Discipline présentes dans notre Repository
-    // @return List<Discipline> via disciplineRepo.findAll()
+    // Méthode GetAllAcivity() 
+    // pour toutes les instances Activity présentes dans notre Repository
+    // @return List<Activity> via activity(Repo.findAll()
     List<Activity> getAllActivity() 
     {
     	return activityRepo.findAll();
@@ -43,7 +48,7 @@ public class ActivityController
     
     // Lister une discipline par l'id
     @GetMapping("/{id}")
-    ResponseEntity<Activity> getActivityById(@PathVariable(value = "id") long id) 
+    ResponseEntity<Activity> getActivityById(@PathVariable(value = "id") long id)
     {
         Activity activity = activityRepo.getOne(id);
 
@@ -54,12 +59,38 @@ public class ActivityController
 
         return ResponseEntity.ok().body(activity);
     }
-    
-    // Ajouter une discipline
-    @PostMapping
+
+    @PostMapping 
+    // @RequestBody dans mon URL je dois récupèrer un objet 
+    // de type Json que je parse en type de mon argument de méthode
+    // qui est pour ce cas un de mes modèles.
+    // @Valid = validation au @RequestBody 
     Activity addActivity(@Valid @RequestBody Activity activity) 
     {
         return activityRepo.save(activity);
+    }
+    
+    /* ajouter une activité en la liant a un lieu
+      ===============================================
+      Ajouter une activité suivante avec Postman :
+      test de ma méthode addActivity
+      POST : localhost:8080/api/activity/activity/place/1
+      ===============================================*/
+    @PostMapping("/activity/place/{id}")
+    Activity postActivityByIdPlace(@PathVariable(value = "id") long id,
+    		@Valid @RequestBody Activity activity) 
+    {
+    	// Après injection du repository de Place
+    	// pour disposer des dépendances Jpa de Place
+    	// je récupère mon place_id et ses attributs
+    	Place place = placeRepo.getOne(id);
+    	
+    	// Je lie les entités Activity et place 
+    	// grave aux relations OneToMany et ManyToOne 
+    	// dans leur modèles des deux objets 
+    	activity.setPlace(place);
+    	
+    	return activityRepo.save(activity);
     }
     
     // Modifier une discipline par l'id
@@ -82,13 +113,13 @@ public class ActivityController
         }
 
         // mise a jour de l'attribut horaire de début
-        if (activity.getStartTime() != null) 
+        if (activity.getStartTime() != 0) 
         {
             activityToUpdate.setStartTime(activity.getStartTime());
         }
         
         // mise a jour de l'attribut horaire de fin
-        if (activity.getEndTime() != null) 
+        if (activity.getEndTime() != 0) 
         {
             activityToUpdate.setEndTime(activity.getEndTime());
         }

@@ -10,13 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Place
 {
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long placeId;
+	private long id;
 	
 	private String place;
 	private String name;
@@ -36,17 +38,21 @@ public class Place
 	private double latitude;
 	private Date datePlace;
 	
-	@ManyToOne
-	private Activity activity;
+	// @One = entité Place
+	// To
+	// Many = liste de classe Activity du nouvel attribut activities
+	
+	@OneToMany(mappedBy = "place")
+	private List<Activity> activities;
 
 	// Création d'un constructeur d'objet place
 	public Place() {}
 
-	public Place(long placeId, String place, String name, String address, String city, String zipCode, String phone,
+	public Place(long id, String place, String name, String address, String city, String zipCode, String phone,
 			String monday, String tuesday, String wednesday, String thursday, String friday, String saturday,
-			String sunday, String image, double longitude, double latitude, Date datePlace, Activity activity) 
+			String sunday, String image, double longitude, double latitude, Date datePlace, List<Activity> activities) 
 	{
-		this.placeId = placeId;
+		this.id = id;
 		this.place = place;
 		this.name = name;
 		this.address = address;
@@ -64,16 +70,10 @@ public class Place
 		this.longitude = longitude;
 		this.latitude = latitude;
 		this.datePlace = datePlace;
-		this.activity = activity;
+		this.activities = activities;
 	}
 
-	public long getPlaceId() {
-		return placeId;
-	}
 
-	public void setPlaceId(long placeId) {
-		this.placeId = placeId;
-	}
 
 	public String getPlace() {
 		return place;
@@ -211,11 +211,21 @@ public class Place
 		this.datePlace = datePlace;
 	}
 
-	public Activity getActivity() {
-		return activity;
+	public long getId() {
+		return id;
 	}
 
-	public void setActivity(Activity activity) {
-		this.activity = activity;
+	public void setId(long id) {
+		this.id = id;
 	}
+
+	public List<Activity> getActivities() {
+		return activities;
+	}
+
+	public void setActivities(List<Activity> activities) {
+		this.activities = activities;
+	}
+
+	
 }

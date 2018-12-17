@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class User 
@@ -14,30 +13,30 @@ public class User
 	// Creer la clef primaire
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long userId;
+	private long id;
 	
 	private String email;
 	private String password;
 	
-	@OneToOne
-	private Profil profilId;
+	@OneToOne(mappedBy = "user")
+	private Profil profil;
 	
 	public User() {}
 
-	public User(long userId, String email, String password, Profil profilId) 
+	public User(long id, String email, String password, Profil profil) 
 	{
-		this.userId = userId;
+		this.id = id;
 		this.email = email;
 		this.password = password;
-		this.profilId = profilId;
+		this.profil = profil;
 	}
 
-	public long getUserId() {
-		return userId;
+	public long getId() {
+		return id;
 	}
 
-	public void setUserId(long userId) {
-		this.userId = userId;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getEmail() {
@@ -56,11 +55,11 @@ public class User
 		this.password = password;
 	}
 
-	public Profil getProfilId() {
-		return profilId;
+	public Profil getProfil() {
+		return profil;
 	}
 
-	public void setProfilId(Profil profilId) {
-		this.profilId = profilId;
+	public void setProfil(Profil profil) {
+		this.profil = profil;
 	}
 }

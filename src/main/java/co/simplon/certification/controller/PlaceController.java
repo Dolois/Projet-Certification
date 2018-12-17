@@ -1,5 +1,6 @@
 package co.simplon.certification.controller;
 
+import co.simplon.certification.model.Activity;
 import co.simplon.certification.model.Place;
 import co.simplon.certification.repository.PlaceRepository;
 
@@ -55,10 +56,22 @@ public class PlaceController
     {
     	return placeRepo.findAll();
     }
+    
+    
+    @GetMapping("/activities/{id}")
+    List <Activity> getAllActivitiesByPlace(@PathVariable(value="id") long id)
+    {
+    	Place place = placeRepo.getOne(id);
+    	
+    	return place.getActivities();
+    	
+    }
+    
+    
 
     // Retourne une activité sportive par l'id
     @GetMapping("/{id}")
-    ResponseEntity<Place> getPlaceById(@PathVariable long id) 
+    ResponseEntity<Place> getPlaceById(@PathVariable(value="id") long id) 
     {
         Place place = placeRepo.getOne(id);
 
@@ -69,7 +82,12 @@ public class PlaceController
 
         return ResponseEntity.ok().body(place);
     }
-    
+
+    //===============================================
+    // Ajouter un lieu suivant avec Postman :
+    // test de ma méthode addPlace
+    // POST : localhost:8080/api/place
+    //===============================================
     // Ajouter une activité sportive
     @PostMapping
     Place addPlace(@Valid @RequestBody Place place) 

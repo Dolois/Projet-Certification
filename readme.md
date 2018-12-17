@@ -1,12 +1,12 @@
-#### certification API Restful
-
-
+### certification API Restful
 
 Les compétences acquises :
   * Developper une application client-serveur
   * Maquetter une application (mockup Mobile First)
   * Concevoir une base de données (diagrammes)
   * Mettre en place une base de données (MySQL + Jointures + CRUD)
+  * Tests avec Postman de POST des entités Place et Activity
+  * Tests avec Postman de GET des entités Place et Activity
   * Developper une interface utilisateur (UI/UX) (Materialize pour les normes) (W3C)
   * Développer des composants d'accés aux données (Hibernate, MVC, tomcat)
 
@@ -30,10 +30,12 @@ Github permet aussi de faire différentes branches, c'est très pratique pour hi
 
 Je vous présente mon chef d'oeuvre avec [<b>Slide</b>](https://slides.com/dolois/my-project-java-ee-api-3#/)
 
-[<b>star UML</b>] : Star UML est un logiciel gratuit et facile d'utilisation pour réaliser 
+[<b>star UML</b>] est un logiciel gratuit et facile d'utilisation pour réaliser 
   * mes diagrammes use cases
   * mes diagrammes des classes
   * mes diagrammes d'entités / relations
   
 Ils sont important pour la réflexion et m'aide à savoir ce que je veux dans chaque tables pour chaque users. <br>
 Star UML permet de faire ceci très simplement et possède des outils d'automatisation de certaines tâches comme générer des méthodes.
+
+Voici ma [<b>Documentation</b>](F:/Eclipse/workspace/certification-back/doc/index.html?co/simplon/certification/controller/package-summary.html) de mon projet

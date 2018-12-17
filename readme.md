@@ -1,7 +1,5 @@
 #### certification API Restful
 
-
-
 Les compétences acquises :
   * Developper une application client-serveur
   * Maquetter une application (mockup Mobile First)
@@ -39,3 +37,5 @@ Je vous présente mon chef d'oeuvre avec [<b>Slide</b>](https://slides.com/doloi
   
 Ils sont important pour la réflexion et m'aide à savoir ce que je veux dans chaque tables pour chaque users. <br>
 Star UML permet de faire ceci très simplement et possède des outils d'automatisation de certaines tâches comme générer des méthodes.
+
+Ma documentation [JavaDoc](file:///F:/Eclipse/workspace/certification-back/doc/index.html?co/simplon/certification/controller/package-summary.html)

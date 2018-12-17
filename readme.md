@@ -30,7 +30,7 @@ Github permet aussi de faire différentes branches, c'est très pratique pour hi
 
 Je vous présente mon chef d'oeuvre avec [<b>Slide</b>](https://slides.com/dolois/my-project-java-ee-api-3#/)
 
-[<b>star UML</b>] : Star UML est un logiciel gratuit et facile d'utilisation pour réaliser 
+[<b>star UML</b>] est un logiciel gratuit et facile d'utilisation pour réaliser 
   * mes diagrammes use cases
   * mes diagrammes des classes
   * mes diagrammes d'entités / relations
@@ -38,4 +38,4 @@ Je vous présente mon chef d'oeuvre avec [<b>Slide</b>](https://slides.com/doloi
 Ils sont important pour la réflexion et m'aide à savoir ce que je veux dans chaque tables pour chaque users. <br>
 Star UML permet de faire ceci très simplement et possède des outils d'automatisation de certaines tâches comme générer des méthodes.
 
-J'utilise [<b>JavaDoc</b>](file:///F:/Eclipse/workspace/certification-back/doc/index.html?co/simplon/certification/controller/package-summary.html)
+Voici ma[<b>Documentation</b>](file:///F:/Eclipse/workspace/certification-back/doc/index.html?co/simplon/certification/controller/package-summary.html) de mon projet

@@ -18,25 +18,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ProfilController.
+ */
 @CrossOrigin("http://localhost:4200")
 
 @RestController
 @RequestMapping("/api/profil")
 public class ProfilController 
 {
+    
+    /** The profil repo. */
     @Autowired
 
-    // Créer une instance nommée profilRepo de ProfilRepository
+    // Creer une instance nommee profilRepo de ProfilRepository
     private ProfilRepository profilRepo;
 
-    // Lister tous les profils
+    /**
+     * Gets the all profil.
+     *
+     * @return the all profil
+     */
     @GetMapping
     List<Profil> getAllProfil() 
     {
     	return profilRepo.findAll();
     }
 
-    // Lister un profil par l'id
+    /**
+     * Gets the profil by id.
+     *
+     * @param id the id
+     * @return the profil by id
+     */
     @GetMapping("{id}")
     ResponseEntity<Profil> getProfilById(@PathVariable(value = "id") long id) 
     {
@@ -50,14 +65,25 @@ public class ProfilController
         return ResponseEntity.ok().body(profil);
     }
 
-    // Ajouter un profil
+    /**
+     * Adds the profil.
+     *
+     * @param profil the profil
+     * @return the profil
+     */
     @PostMapping
     Profil addProfil(@Valid @RequestBody Profil profil) 
     {
         return profilRepo.save(profil);
     }
     
-    // Modifier un profil par l'id
+    /**
+     * Update profil.
+     *
+     * @param id the id
+     * @param profil the profil
+     * @return the response entity
+     */
     @PutMapping("/{id}")
     ResponseEntity<Profil> updateProfil(@PathVariable(value = "id") long id, 
     										@Valid @RequestBody Profil profil) 
@@ -129,7 +155,12 @@ public class ProfilController
         return ResponseEntity.ok(updateProfil);
     }
 
-    // Supprimer une activité sportive par l'id
+    /**
+     * Delete profil.
+     *
+     * @param id the id
+     * @return the response entity
+     */
     @DeleteMapping("/{id}")
     ResponseEntity<Profil> deleteProfil(@PathVariable(value = "id") long id) 
     {

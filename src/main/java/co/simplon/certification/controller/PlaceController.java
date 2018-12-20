@@ -20,17 +20,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// Signaler que les URL sont des embranchements
-// Fusion de l'annotation Controller et response body
-//Toutes les requetes arrivant sur api/activite viendront sur ce controller.
-//
-//Cette classe contient juste le traitement sur les URL qu'elle reçoit et
-//passera en argument de methode une partie du contenu de l'url
-//grace à @PathVariable pour parser a nouveau dans un type java
+/** Signaler que les URL sont des embranchements
+ * Fusion de l'annotation Controller et response body
+ * Toutes les requetes arrivant sur api/activite viendront sur ce controller.
+ *
+ * Cette classe contient juste le traitement sur les URL qu'elle reçoit et
+ * passera en argument de methode une partie du contenu de l'url
+ * grace à @PathVariable pour parser a nouveau dans un type java
+ */
 
-
-// Mettre en commentaire @CrossOrigin("http://localhost:4200")
-// pour effectuer des tests de vos méthodes CRUD avec Postman 
+/** Mettre en commentaire @CrossOrigin("http://localhost:4200")
+ * pour effectuer des tests de vos méthodes CRUD avec Postman
+ */ 
 @CrossOrigin("http://localhost:4200")
 
 @RestController
@@ -38,28 +39,40 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class PlaceController 
 {
-	// Injection de dépendance JPA
-	// grace à l'annotation Autowired et 
-	// l'utilisation d'un constructeur
+	/** Injection de dependance JPA
+	 * grace à l'annotation Autowired et 
+	 * l'utilisation d'un constructeur
+	 */
     @Autowired
     
-    // Création d'une instance nommé activityRepo 
-    // de l'interface ActivityRepository
+    /** Creation d'une instance nommee activityRepo 
+     * de l'interface ActivityRepository
+     */
     private PlaceRepository placeRepo;
     
-	// retourne une liste du résultat de la requête select * from activity
+    /**
+     * Retourne une liste de lieux avec Postman :
+     * test de ma methode getAllPlaces
+     * Get : localhost:8080/api/place.
+     *
+     * @return the all places
+     */
     @GetMapping
-    // Méthode GetAllPlaces() 
-    // pour toutes les instances Place présentes dans notre Repository
-    // @return List<Place> via placeRepo.findAll()
     List<Place> getAllPlaces()
     {
     	return placeRepo.findAll();
     }
     
-    
+    /**
+     * Retourne une liste d'activites avec l'objet lieu avec Postman :
+     * test de ma methode getAllActivitiesByPlace
+     * Get : localhost:8080/api/place/activities/1.
+     *
+     * @param id the id
+     * @return the all activities by place
+     */
     @GetMapping("/activities/{id}")
-    List <Activity> getAllActivitiesByPlace(@PathVariable(value="id") long id)
+    List<Activity> getAllActivitiesByPlace(@PathVariable(value="id") long id)
     {
     	Place place = placeRepo.getOne(id);
     	
@@ -67,9 +80,14 @@ public class PlaceController
     	
     }
     
-    
-
-    // Retourne une activité sportive par l'id
+    /**
+     * Recuperer un lieu avec Postman :
+     * test de ma methode getPlaceById
+     * Get : localhost:8080/api/place/1.
+     *
+     * @param id the id
+     * @return the place by id
+     */
     @GetMapping("/{id}")
     ResponseEntity<Place> getPlaceById(@PathVariable(value="id") long id) 
     {
@@ -83,26 +101,36 @@ public class PlaceController
         return ResponseEntity.ok().body(place);
     }
 
-    //===============================================
-    // Ajouter un lieu suivant avec Postman :
-    // test de ma méthode addPlace
-    // POST : localhost:8080/api/place
-    //===============================================
-    // Ajouter une activité sportive
+    /**
+     * Ajouter un lieu avec Postman :
+     * test de ma methode addPlace
+     * Post : localhost:8080/api/place.
+     *
+     * @param place the place
+     * @return the place
+     */
     @PostMapping
     Place addPlace(@Valid @RequestBody Place place) 
     {
         return placeRepo.save(place);
     }
 
-    // Modifier une activité sportive par l'id
+    /**
+     * Modifier un lieu avec Postman :
+     * test de ma methode updPlaceById
+     * Put : localhost:8080/api/place/1.
+     *
+     * @param id the id
+     * @param place the place
+     * @return the response entity
+     */
     @PutMapping("/{id}")
     ResponseEntity<Place> updPlaceById(@PathVariable(value = "id") long id, 
     										@Valid @RequestBody Place place) 
     {
         Place placeToUpdate = placeRepo.getOne(id);
 
-        // Si l'occurence est null alors id non trouvé 
+        // Si l'occurence est null alors id non trouve 
         if (placeToUpdate == null) 
         {
             return ResponseEntity.notFound().build();
@@ -209,7 +237,14 @@ public class PlaceController
         return ResponseEntity.ok(updatePlace);
     }
 
-    // Supprimer une activité sportive par l'id
+    /**
+     * Supprimer un lieu avec Postman :
+     * test de ma methode deletePlaceById
+     * Delete : localhost:8080/api/place/1.
+     *
+     * @param id the id
+     * @return the response entity
+     */
     @DeleteMapping("/{id}")
     ResponseEntity<Place> delPlaceById(@PathVariable(value = "id") long id) 
     {

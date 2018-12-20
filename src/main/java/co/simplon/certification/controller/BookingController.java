@@ -21,35 +21,54 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// Signaler que les URI sont des embranchements
-// Fusion de l'annotation Controller et response body
-// Toutes les requetes arrivant sur api/activite viendront sur ce controller.
-//
-// Cette classe contient juste le traitement sur les URL qu'elle reçoit et
-// passera en argument de methode une partie du contenu de l'url
-// grace à @PathVariable pour parser a nouveau dans un type java
+// TODO: Auto-generated Javadoc
 
-// Mettre en commentaire @CrossOrigin("http://localhost:4200")
-// pour effectuer des tests de vos méthodes CRUD avec Postman
+/** Signaler que les URI sont des embranchements 
+ * Fusion de l'annotation Controller et response body
+ * Toutes les requetes arrivant sur api/activite viendront sur ce controller.
+ *
+ * Cette classe contient juste le traitement sur les URL qu'elle reçoit et
+ * passera en argument de methode une partie du contenu de l'url
+ * grace à @PathVariable pour parser a nouveau dans un type java
+ *
+ * Mettre en commentaire pour effectuer vos tests 
+ * de vos méthodes CRUD avec Postman 
+ * @CrossOrigin("http://localhost:4200")
+ */
+
+/**
+ * The Class BookingController.
+ */
 @CrossOrigin("http://localhost:4200")
 
 @RestController
 @RequestMapping("/api/booking")
 public class BookingController 
 {
+    
+    /** The booking repo. */
     @Autowired
 
-    // Créer une instance nommée bookingRepo de BookingRepository
+    /** Creer une instance nommee bookingRepo de BookingRepository */
     private BookingRepository bookingRepo;
 
-    // Lister toutes les réservations
+    /**
+     * Gets the all booking.
+     *
+     * @return the all booking
+     */
     @GetMapping
     List<Booking> getAllBooking() 
     {
     	return bookingRepo.findAll();
     }
     
-    // Lister une réservation par l'id
+    /**
+     * Gets the booking by id.
+     *
+     * @param id the id
+     * @return the booking by id
+     */
     @GetMapping("/{id}")
     ResponseEntity<Booking> getBookingById(@PathVariable(value = "id") long id) 
     {
@@ -63,21 +82,32 @@ public class BookingController
         return ResponseEntity.ok().body(booking);
     }
     
-    // Ajouter une réservation d'une activite sportive
+    /**
+     * Adds the booking.
+     *
+     * @param booking the booking
+     * @return the booking
+     */
     @PostMapping
     Booking addBooking(@Valid @RequestBody Booking booking) 
     {
         return bookingRepo.save(booking);
     }
     
-    // Modifier une reservation par l'id
+    /**
+     * Update booking.
+     *
+     * @param id the id
+     * @param booking the booking
+     * @return the response entity
+     */
     @PutMapping("/{id}")
     ResponseEntity<Booking> updateBooking(@PathVariable(value = "id") long id, 
     									  @Valid @RequestBody Booking booking) 
     {
         Booking bookingToUpdate = bookingRepo.getOne(id);
 
-        // Si l'occurence est null alors id non trouvé 
+        /** Si l'occurence est null alors id non trouve */
         if (bookingToUpdate == null) 
         {
             return ResponseEntity.notFound().build();
@@ -101,7 +131,7 @@ public class BookingController
             bookingToUpdate.setEndTime(booking.getEndTime());
         }
         
-        // mise a jour de la durée 
+        // mise a jour de la duree 
         if (booking.getDuration() != 0)
         {
         	bookingToUpdate.setDuration(booking.getDuration());
@@ -112,7 +142,12 @@ public class BookingController
         return ResponseEntity.ok(updateBooking);
     }
     
-    // Supprimer une réservation par l'id
+    /**
+     * Delete booking.
+     *
+     * @param id the id
+     * @return the response entity
+     */
     @DeleteMapping("/{id}")
     ResponseEntity<Booking> deleteBooking(@PathVariable(value = "id") long id) 
     {

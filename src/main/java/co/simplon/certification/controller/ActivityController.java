@@ -20,6 +20,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ActivityController.
+ */
 @CrossOrigin("http://localhost:4200")
 
 @RestController
@@ -27,26 +31,35 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class ActivityController 
 {
-    //permet d'injecter DisciplineRepository dans mon contrôleur
+    
+    /** The activity repo. */
+    /** permet d'injecter ActivityRepository dans mon contrôleur */
     @Autowired
-    // Créer une instance nommée disciplineRepo de DisciplineRepository
+    /** Creer une instance nommee activityRepo de ActivityRepository */
     private ActivityRepository activityRepo;
     
+    /** The place repo. */
     @Autowired
-    // Créer une instance nommée disciplineRepo de DisciplineRepository
+    /* Creer une instance nommee placeRepo de PlaceRepository */
     private PlaceRepository placeRepo;
     
-    // Lister toutes les disciplines
+    /**
+     * Gets the all activity.
+     *
+     * @return the all activity
+     */
     @GetMapping
-    // Méthode GetAllAcivity() 
-    // pour toutes les instances Activity présentes dans notre Repository
-    // @return List<Activity> via activity(Repo.findAll()
     List<Activity> getAllActivity() 
     {
     	return activityRepo.findAll();
     }
     
-    // Lister une discipline par l'id
+    /**
+     * Gets the activity by id.
+     *
+     * @param id the id
+     * @return the activity by id
+     */
     @GetMapping("/{id}")
     ResponseEntity<Activity> getActivityById(@PathVariable(value = "id") long id)
     {
@@ -60,40 +73,65 @@ public class ActivityController
         return ResponseEntity.ok().body(activity);
     }
 
+    /**
+     * Adds the activity.
+     *
+     * @param activity the activity
+     * @return the activity
+     */
     @PostMapping 
-    // @RequestBody dans mon URL je dois récupèrer un objet 
-    // de type Json que je parse en type de mon argument de méthode
-    // qui est pour ce cas un de mes modèles.
-    // @Valid = validation au @RequestBody 
+    /** @RequestBody me permet dans mon URL de recuperer un objet 
+     *  de type Json que je parse en type de mon argument de methode
+     *  qui est pour ce cas un de mes modeles.
+     *  @Valid = validation au @RequestBody
+     */ 
     Activity addActivity(@Valid @RequestBody Activity activity) 
     {
         return activityRepo.save(activity);
     }
     
-    /* ajouter une activité en la liant a un lieu
-      ===============================================
-      Ajouter une activité suivante avec Postman :
-      test de ma méthode addActivity
-      POST : localhost:8080/api/activity/activity/place/1
-      ===============================================*/
+    
+    /** ajouter une activite en la liant a un lieu
+     *  ===============================================
+     *  Ajouter une activite suivante avec Postman :
+     *  test de ma méthode addActivity
+     *  POST : localhost:8080/api/activity/activity/place/1
+     * ===============================================
+     */
+    
+    /**
+     * Post activity by id place.
+     *
+     * @param id the id
+     * @param activity the activity
+     * @return the activity
+     */
     @PostMapping("/activity/place/{id}")
-    Activity postActivityByIdPlace(@PathVariable(value = "id") long id,
+    Activity addActivityByIdPlace(@PathVariable(value = "id") long id,
     		@Valid @RequestBody Activity activity) 
     {
-    	// Après injection du repository de Place
-    	// pour disposer des dépendances Jpa de Place
-    	// je récupère mon place_id et ses attributs
+    	/** Apres l'injection du repository de Place
+    	 * pour disposer des dependances Jpa de Place
+    	 * je recupere mon place_id et ses attributs
+    	 */
     	Place place = placeRepo.getOne(id);
     	
-    	// Je lie les entités Activity et place 
-    	// grave aux relations OneToMany et ManyToOne 
-    	// dans leur modèles des deux objets 
+    	/** Je lie les entites Activity et place 
+    	 * grave aux relations OneToMany et ManyToOne 
+    	 * dans leur modeles des deux objets
+    	 */
     	activity.setPlace(place);
     	
     	return activityRepo.save(activity);
     }
     
-    // Modifier une discipline par l'id
+    /**
+     * Update activity.
+     *
+     * @param id the id
+     * @param activity the activity
+     * @return the response entity
+     */
     @PutMapping("/{id}")
     ResponseEntity<Activity> updateActivity(@PathVariable(value = "id") long id, 
     										@Valid @RequestBody Activity activity) 
@@ -106,7 +144,7 @@ public class ActivityController
             return ResponseEntity.notFound().build();
         }
 
-        // mise a jour de l'attribut discipline
+        // mise a jour de l'attribut acivite
         if (activity.getActivity() != null) 
         {
             activityToUpdate.setActivity(activity.getActivity());
@@ -130,7 +168,12 @@ public class ActivityController
         return ResponseEntity.ok(updateActivity);
     }
     
-    // Supprimer une discipline par l'id
+    /**
+     * Delete activity.
+     *
+     * @param id the id
+     * @return the response entity
+     */
     @DeleteMapping("/{id}")
     ResponseEntity<Activity> deleteActivity(@PathVariable(value = "id") long id) 
     {

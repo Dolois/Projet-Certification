@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,25 +18,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//@CrossOrigin("http://localhost:4200")
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UserController.
+ */
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/user")
 
 public class UserController 
 {
+    
+    /** The user repo. */
     @Autowired
 
-    // Créer une instance nommée utilisateurRepo de UtilisateurRepository
+    /** Creer une instance nommee utilisateurRepo de UtilisateurRepository */
     private UserRepository userRepo;
 
-    // Lister tous les utilisateurs
+    /**
+     * Gets the all user.
+     *
+     * @return the all user
+     */
     @GetMapping
     List<User> getAllUser() 
     {
     	return userRepo.findAll();
     }
     
-    // Lister un utilisateur par l'id
+    /**
+     * Gets the user by id.
+     *
+     * @param id the id
+     * @return the user by id
+     */
     @GetMapping("/{id}")
     ResponseEntity<User> getUserById(@PathVariable long id) 
     {
@@ -49,14 +65,25 @@ public class UserController
         return ResponseEntity.ok().body(user);
     }
     
-    // Ajouter un utilisateur
+    /**
+     * Adds the user.
+     *
+     * @param user the user
+     * @return the user
+     */
     @PostMapping
     User addUser(@Valid @RequestBody User user) 
     {
         return userRepo.save(user);
     }
     
-    // Modifier un utilisateur par l'id
+    /**
+     * Update user.
+     *
+     * @param id the id
+     * @param user the user
+     * @return the response entity
+     */
     @PutMapping("/{id}")
     ResponseEntity<User> updateUser(@PathVariable(value = "id") long id, 
     								@Valid @RequestBody User user) 
@@ -86,7 +113,12 @@ public class UserController
         return ResponseEntity.ok(updateUser);
     }
     
-    // Supprimer un utilisateur par l'id
+    /**
+     * Delete user.
+     *
+     * @param id the id
+     * @return the response entity
+     */
     @DeleteMapping("/{id}")
     ResponseEntity<User> deleteUser(@PathVariable(value = "id") long id) 
     {

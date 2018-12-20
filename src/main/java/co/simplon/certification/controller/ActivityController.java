@@ -91,12 +91,17 @@ public class ActivityController
     }
     
     
-    /** ajouter une activite en la liant a un lieu
+    /**
+     *  ajouter une activite en la liant a un lieu
      *  ===============================================
      *  Ajouter une activite suivante avec Postman :
      *  test de ma méthode addActivity
      *  POST : localhost:8080/api/activity/activity/place/1
-     * ===============================================
+     * ===============================================.
+     *
+     * @param id the id
+     * @param activity the activity
+     * @return the activity
      */
     
     /**

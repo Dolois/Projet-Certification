@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+// TODO: Auto-generated Javadoc
 /** Signaler que les URL sont des embranchements
  * Fusion de l'annotation Controller et response body
  * Toutes les requetes arrivant sur api/activite viendront sur ce controller.
@@ -39,10 +40,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 public class PlaceController 
 {
-	/** Injection de dependance JPA
-	 * grace à l'annotation Autowired et 
-	 * l'utilisation d'un constructeur
-	 */
+	
+	/**  Injection de dependance JPA grace à l'annotation Autowired et  l'utilisation d'un constructeur. */
     @Autowired
     
     /** Creation d'une instance nommee activityRepo 

@@ -28,7 +28,7 @@ Pour l'organisation de mon code, j'utilise [<b>GitHub</b>](https://github.com/Do
 C'est un outil qui permet de partager mon projet afin de pouvoir demander des avis à mes collègues développeurs. <br>
 Github permet aussi de faire différentes branches, c'est très pratique pour hiérarchiser ces modifications.
 
-Je vous présente mon chef d'oeuvre avec [<b>Slide</b>](https://slides.com/dolois/my-project-java-ee-api-3#/)
+Je vous présente mon API Rest avec [<b>Slide</b>](https://slides.com/dolois/my-project-java-ee-api-3#/)
 
 [<b>star UML</b>] est un logiciel gratuit et facile d'utilisation pour réaliser 
   * mes diagrammes use cases

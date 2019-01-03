@@ -5,6 +5,7 @@ import co.simplon.certification.model.Place;
 import co.simplon.certification.repository.PlaceRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -41,10 +42,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class PlaceController 
 {
 	
-	/**  Injection de dependance JPA grace à l'annotation Autowired et  l'utilisation d'un constructeur. */
+	/**  
+	 * Injection de dependance JPA 
+	 * grace à l'annotation @Autowired du framework Spring 
+	 * et l'utilisation d'un constructeur. 
+	 * 
+	 */
     @Autowired
     
-    /** Creation d'une instance nommee activityRepo 
+    /** 
+     * Creation d'une instance nommee activityRepo 
      * de l'interface ActivityRepository
      */
     private PlaceRepository placeRepo;
@@ -74,9 +81,7 @@ public class PlaceController
     List<Activity> getAllActivitiesByPlace(@PathVariable(value="id") long id)
     {
     	Place place = placeRepo.getOne(id);
-    	
     	return place.getActivities();
-    	
     }
     
     /**
@@ -88,16 +93,9 @@ public class PlaceController
      * @return the place by id
      */
     @GetMapping("/{id}")
-    ResponseEntity<Place> getPlaceById(@PathVariable(value="id") long id) 
+    Optional<Place> getPlaceById(@PathVariable(value="id") long id)
     {
-        Place place = placeRepo.getOne(id);
-
-        if (place == null) 
-        {
-            return ResponseEntity.notFound().build();
-        }
-
-        return ResponseEntity.ok().body(place);
+    	return placeRepo.findById(id);
     }
 
     /**
